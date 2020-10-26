@@ -1,38 +1,55 @@
 .App {
-  text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.InitState {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  height: calc(100vh - 16px);
+}
+
+.InitState > div {
+  width: 50%;
+}
+
+.Sky {
+  height: 20%;
+  background-color: skyblue;
+}
+
+.Plate {
+  height: 30%;
+  background-color: rosybrown;
+}
+
+.Mantle {
+  height: 50%;
+  background-color: lightcoral;
+}
+
+.ControlPanel {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-wrap: wrap;
+  align-self: flex-end;
+  height: 40%;
+  background-color: lightslategray;
+  margin-left: -50%;
 }
 
-.App-link {
-  color: #61dafb;
+.PlateTypeButton {
+  width: 50%;
+  height: 50%;
+  background-color: aquamarine;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.ArrowButtonContainer {
+  display: grid;
+  grid-template-areas:
+    ". up ."
+    "left . right"
+    ". down .";
+  width: 30%;
+}
+
+.ArrowButton {
+  background-color: lightyellow;
 }
