@@ -5,8 +5,8 @@ import ArrowButton from "./ArrowButton";
 function ControlPanel() {
     return (
         <div className="ControlPanel">
-            <PlateTypeButton/>
-            <PlateTypeButton/>
+            <PlateTypeButton orientation={"left-plate-type"}/>
+            <PlateTypeButton orientation={"right-plate-type"}/>
             <div className="ArrowButtonContainer">
                 <ArrowButton orientation={"up"}/>
                 <ArrowButton orientation={"left"}/>

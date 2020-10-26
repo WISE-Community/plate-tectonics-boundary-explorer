@@ -2,54 +2,75 @@
 }
 
 .InitState {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto auto;
   height: calc(100vh - 16px);
 }
 
-.InitState > div {
-  width: 50%;
+.HalfInitState {
+  display: grid;
+  grid-template-rows: [top] 20% [sky-bottom plate-top] 30% [plate-bottom mantle-top]
+    10% [control-panel-top] auto [bottom];
+  grid-template-columns: [left] 10% [control-panel-left] auto [control-panel-right] 10% [right];
 }
 
 .Sky {
-  height: 20%;
+  grid-column: left / right;
+  grid-row: top / sky-bottom;
   background-color: skyblue;
 }
 
 .Plate {
-  height: 30%;
+  grid-column: left / right;
+  grid-row: plate-top / plate-bottom;
   background-color: rosybrown;
 }
 
 .Mantle {
-  height: 50%;
+  grid-column: left / right;
+  grid-row: mantle-top / bottom;
   background-color: lightcoral;
 }
 
 .ControlPanel {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  align-self: flex-end;
-  height: 40%;
+  grid-column: control-panel-left / control-panel-right;
+  grid-row: control-panel-top / bottom;
+
+  display: grid;
+  grid-template-areas:
+    "left-plate-type left-plate-type right-plate-type right-plate-type"
+    "left-plate-type left-plate-type right-plate-type right-plate-type"
+    ". arrow-container arrow-container ."
+    ". arrow-container arrow-container .";
   background-color: lightslategray;
-  margin-left: -50%;
 }
 
 .PlateTypeButton {
-  width: 50%;
-  height: 50%;
   background-color: aquamarine;
 }
 
 .ArrowButtonContainer {
+  grid-area: arrow-container;
+
   display: grid;
   grid-template-areas:
     ". up ."
     "left . right"
     ". down .";
-  width: 30%;
 }
 
 .ArrowButton {
   background-color: lightyellow;
+}
+
+.StartRestartButton {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: 5vw;
+  height: 5vw;
+  background-color: darkgreen;
 }

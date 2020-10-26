@@ -2,7 +2,7 @@ import React from "react";
 
 function StartRestartButton() {
     return (
-        <div></div>
+        <div className="StartRestartButton"></div>
     );
 }
 

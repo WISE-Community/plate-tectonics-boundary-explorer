@@ -1,8 +1,8 @@
 import React from "react";
 
-function PlateTypeButton() {
+function PlateTypeButton(props) {
     return (
-        <div className="PlateTypeButton"></div>
+        <div className="PlateTypeButton" style={{gridArea: props.orientation}}></div>
     );
 }
 
