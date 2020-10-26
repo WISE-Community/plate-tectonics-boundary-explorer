@@ -4,9 +4,9 @@ import Mantle from "./Mantle";
 import ControlPanel from "./ControlPanel";
 import Sky from "./Sky";
 
-function HalfInitState() {
+function HalfScreen() {
     return (
-        <div className="HalfInitState">
+        <div className="HalfScreen">
             <Sky/>
             <Plate/>
             <Mantle/>
@@ -15,4 +15,4 @@ function HalfInitState() {
     )
 }
 
-export default HalfInitState;
+export default HalfScreen;

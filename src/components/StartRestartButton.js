@@ -1,8 +1,8 @@
 import React from "react";
 
-function StartRestartButton() {
+function StartRestartButton(props) {
     return (
-        <div className="StartRestartButton"></div>
+        <button className="StartRestartButton" onClick={props.onClick}/>
     );
 }
 

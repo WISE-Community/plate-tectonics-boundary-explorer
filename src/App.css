@@ -1,15 +1,12 @@
 .App {
-}
-
-.InitState {
   display: grid;
   grid-template-columns: auto auto;
   height: calc(100vh - 16px);
 }
 
-.HalfInitState {
+.HalfScreen {
   display: grid;
-  grid-template-rows: [top] 20% [sky-bottom plate-top] 30% [plate-bottom mantle-top]
+  grid-template-rows: [top] 30% [sky-bottom plate-top] 20% [plate-bottom mantle-top]
     10% [control-panel-top] auto [bottom];
   grid-template-columns: [left] 10% [control-panel-left] auto [control-panel-right] 10% [right];
 }
@@ -73,4 +70,12 @@
   width: 5vw;
   height: 5vw;
   background-color: darkgreen;
+}
+
+.TopText {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 20%;
+  text-align: center;
 }
