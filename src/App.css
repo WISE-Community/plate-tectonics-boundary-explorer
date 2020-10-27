@@ -35,8 +35,8 @@
 
   display: grid;
   grid-template-areas:
-    "left-plate-type left-plate-type right-plate-type right-plate-type"
-    "left-plate-type left-plate-type right-plate-type right-plate-type"
+    "left-plate left-plate right-plate right-plate"
+    "left-plate left-plate right-plate right-plate"
     ". arrow-container arrow-container ."
     ". arrow-container arrow-container .";
   background-color: lightslategray;
@@ -76,6 +76,7 @@
   position: absolute;
   left: 0;
   right: 0;
-  top: 20%;
+  top: 10%;
   text-align: center;
+  white-space: pre-wrap;
 }

@@ -1,4 +1,9 @@
 import React from "react";
+import PropTypes from "prop-types";
+
+TopText.propTypes = {
+    text: PropTypes.string
+}
 
 function TopText(props) {
     return (
