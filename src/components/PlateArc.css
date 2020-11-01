@@ -1,0 +1,80 @@
+.PlateArc {
+	grid-row: 1 / 11;
+	background-color: lightcoral;
+	position: relative;
+	overflow: hidden;
+}
+
+.PlateArc > div {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+.PlateArcCenterUpLeft {
+	grid-column: 9 / 11;
+}
+
+.PlateArcCenterUpRight {
+	grid-column: 1 / 3;
+}
+
+.Mountain {
+	background-color: rosybrown;
+	z-index: 1;
+}
+
+.MountainLeft {
+	border-bottom-right-radius: 50%;
+}
+
+.MountainRight {
+	border-bottom-left-radius: 50%;
+}
+
+.InnerMask {
+	top: -20%;
+	background: skyblue;
+	z-index: 2;
+}
+
+.InnerMaskLeft {
+	left: -20%;
+	border-bottom-right-radius: 50%;
+}
+
+.InnerMaskRight {
+	right: -20%;
+	border-bottom-left-radius: 50%;
+}
+
+.SpinningMask {
+	background: skyblue;
+	animation-duration: 5s;
+	animation-timing-function: ease-out;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+	z-index: 3;
+}
+
+.SpinningMaskLeft {
+	left: 50%;
+	animation-name: spinCCW;
+	transform-origin: top left;
+}
+
+.SpinningMaskRight {
+	right: 50%;
+	animation-name: spinCW;
+	transform-origin: top right;
+}
+
+@keyframes spinCCW {
+	0% {transform: rotate(0deg);}
+	100% {transform: rotate(-90deg);}
+}
+
+@keyframes spinCW {
+	0% {transform: rotate(0deg);}
+	100% {transform: rotate(90deg);}
+}

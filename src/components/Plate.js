@@ -1,9 +1,18 @@
 import React from "react";
+import PropTypes from "prop-types";
 import "../App.css";
 
-function Plate() {
+Plate.propTypes = {
+    leftPanel: PropTypes.bool
+}
+
+function Plate(props) {
+    const panel = props.leftPanel ? "Left" : "Right";
     return (
-        <div className="Plate"/>
+        <div className="Plate">
+            <div className={`PlateColor PlateColor${panel}`}/>
+            {props.children}
+        </div>
     );
 }
 

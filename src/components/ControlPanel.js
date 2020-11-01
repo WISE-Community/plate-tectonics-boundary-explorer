@@ -5,7 +5,7 @@ import ArrowButton from "./ArrowButton";
 
 ControlPanel.propTypes = {
     onClick: PropTypes.func,
-    state: PropTypes.oneOf(["up", "down", "left", "right"])
+    state: PropTypes.object
 }
 
 function ControlPanel(props) {

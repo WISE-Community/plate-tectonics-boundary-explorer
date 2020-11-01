@@ -8,7 +8,7 @@
   display: grid;
   grid-template-rows: [top] 30% [sky-bottom plate-top] 20% [plate-bottom mantle-top]
     10% [control-panel-top] auto [bottom];
-  grid-template-columns: [left] 10% [control-panel-left] auto [control-panel-right] 10% [right];
+  grid-template-columns: [left] 20% [control-panel-left] auto [control-panel-right] 20% [right];
 }
 
 .Sky {
@@ -20,7 +20,25 @@
 .Plate {
   grid-column: left / right;
   grid-row: plate-top / plate-bottom;
+
+  display: grid;
+  grid-auto-columns: 10%;
+  grid-auto-rows: 10%;
+
+  background-color: skyblue;
+}
+
+.PlateColor {
+  grid-row: 9 / 11;
   background-color: rosybrown;
+}
+
+.PlateColorLeft {
+  grid-column: 1 / 10;
+}
+
+.PlateColorRight {
+  grid-column: 2 / 11;
 }
 
 .Mantle {
@@ -66,10 +84,11 @@
   right: 0;
   top: 0;
   bottom: 0;
-  margin: auto;
+  margin: 40% auto auto;
   width: 5vw;
   height: 5vw;
   background-color: darkgreen;
+  z-index: 10;
 }
 
 .TopText {
@@ -79,4 +98,5 @@
   top: 10%;
   text-align: center;
   white-space: pre-wrap;
+  z-index: 10;
 }
