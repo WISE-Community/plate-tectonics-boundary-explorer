@@ -139,6 +139,7 @@ function App() {
             setCanClickStartRestart(false);
             setClickedStart(false);
             setTopText(INIT_TOP_TEXT);
+            setPlateState({});
         }
         else {
             setClickedStart(true);
@@ -153,10 +154,12 @@ function App() {
         <div className="App">
             <HalfScreen onClick={(clickedButton) => updateControlPanelState(controlPanelState, clickedButton, "left")}
                         controlPanelState={controlPanelState.left}
+                        continental={controlPanelState.left.plate !== "right-plate"} //default to continental (so we use !==)
                         plateState={plateState}
                         leftPanel={true}/>
             <HalfScreen onClick={(clickedButton) => updateControlPanelState(controlPanelState, clickedButton, "right")}
                         controlPanelState={controlPanelState.right}
+                        continental={controlPanelState.right.plate !== "right-plate"}
                         plateState={plateState}
                         leftPanel={false}/>
             <StartRestartButton onClick={onStartRestartClicked} disabled={!canClickStartRestart}/>

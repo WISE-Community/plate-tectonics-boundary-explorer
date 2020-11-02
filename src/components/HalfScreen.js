@@ -10,6 +10,7 @@ HalfScreen.propTypes = {
     onClick: PropTypes.func,
     controlPanelState: PropTypes.object,
     plateState: PropTypes.object,
+    continental: PropTypes.bool,
     leftPanel: PropTypes.bool
 }
 
@@ -17,7 +18,7 @@ function HalfScreen(props) {
     return (
         <div className="HalfScreen">
             <Sky/>
-            <Plate leftPanel={props.leftPanel}>
+            <Plate leftPanel={props.leftPanel} continental={props.continental}>
                 <PlateArc leftPanel={props.leftPanel} position={props.leftPanel ?
                     props.plateState.leftArc : props.plateState.rightArc}/>
             </Plate>

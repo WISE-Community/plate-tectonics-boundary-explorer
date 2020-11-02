@@ -28,16 +28,26 @@
   background-color: skyblue;
 }
 
-.PlateColor {
+.PlateLand {
+  grid-row: 8 / 11;
+  background-color: rosybrown;
+}
+
+.PlateUnderOcean {
   grid-row: 9 / 11;
   background-color: rosybrown;
 }
 
-.PlateColorLeft {
+.PlateOcean {
+  grid-row: 8 / 9;
+  background-color: aqua;
+}
+
+.PlateLeft {
   grid-column: 1 / 10;
 }
 
-.PlateColorRight {
+.PlateRight {
   grid-column: 2 / 11;
 }
 
