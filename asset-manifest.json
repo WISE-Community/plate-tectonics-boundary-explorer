@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/plate-tectonics/static/css/main.f857c35c.chunk.css",
+    "main.js": "/plate-tectonics/static/js/main.c9952c3c.chunk.js",
+    "main.js.map": "/plate-tectonics/static/js/main.c9952c3c.chunk.js.map",
+    "runtime-main.js": "/plate-tectonics/static/js/runtime-main.abf91ee3.js",
+    "runtime-main.js.map": "/plate-tectonics/static/js/runtime-main.abf91ee3.js.map",
+    "static/js/2.4383abd7.chunk.js": "/plate-tectonics/static/js/2.4383abd7.chunk.js",
+    "static/js/2.4383abd7.chunk.js.map": "/plate-tectonics/static/js/2.4383abd7.chunk.js.map",
+    "index.html": "/plate-tectonics/index.html",
+    "precache-manifest.90326c9e24bcde576b65b41f224f225b.js": "/plate-tectonics/precache-manifest.90326c9e24bcde576b65b41f224f225b.js",
+    "service-worker.js": "/plate-tectonics/service-worker.js",
+    "static/css/main.f857c35c.chunk.css.map": "/plate-tectonics/static/css/main.f857c35c.chunk.css.map",
+    "static/js/2.4383abd7.chunk.js.LICENSE.txt": "/plate-tectonics/static/js/2.4383abd7.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.abf91ee3.js",
+    "static/js/2.4383abd7.chunk.js",
+    "static/css/main.f857c35c.chunk.css",
+    "static/js/main.c9952c3c.chunk.js"
+  ]
+}
