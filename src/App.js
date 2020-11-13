@@ -3,8 +3,7 @@ import './App.css';
 import Background from "./components/Background";
 import TopText from "./components/TopText";
 import ControlPanel from "./components/ControlPanel";
-import {BOUNDARY_STATES, INIT_PLATE_STATES, INIT_TOP_TEXT, END_PLATE_STATES, END_STATE} from "./State";
-import Button from "./components/Button";
+import {BOUNDARY_STATES, INIT_PLATE_STATES, INIT_TOP_TEXT, END_PLATE_STATES, STATE_TEXT} from "./State";
 
 function App() {
     const [plateState, setPlateState] = useState(INIT_PLATE_STATES[0]);
@@ -24,7 +23,7 @@ function App() {
         if (newBoundaryState !== "") {
             const newPlateState = plateState + newBoundaryState;
             setPlateState(plateState + newBoundaryState);
-            setTopText(END_STATE[newPlateState].text);
+            setTopText(STATE_TEXT[newPlateState]);
         }
     }
     function onRestartClicked() {

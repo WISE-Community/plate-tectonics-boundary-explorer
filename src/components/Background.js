@@ -30,6 +30,7 @@ function backgroundForState(state) {
 		case "ccd":
 			return <CCD/>;
 		case "co":
+		case "cod":
 			return <CO/>;
 		case "coc":
 			return <COC/>;

@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Button from "./Button";
-import {INIT_PLATE_STATES, END_PLATE_STATES, BOUNDARY_STATES} from "../State";
+import {INIT_PLATE_STATES, END_PLATE_STATES, BOUNDARY_STATES, STATE_TEXT} from "../State";
 
 ControlPanel.propTypes = {
     onClick: PropTypes.func,
@@ -27,12 +27,12 @@ function ControlPanel(props) {
 function plateButtonOfType(plateState, type, onClick) {
     return <Button key={type}
                    onClick={() => onClick(type)}
-                   selected={plateState === type}>{type}</Button>
+                   selected={plateState === type}>{STATE_TEXT[type]}</Button>
 }
 function boundaryButtonOfType(boundaryState, type, onClick) {
     return <Button key={type}
                    onClick={() => onClick(type)}
-                   selected={boundaryState === type}>{type}</Button>
+                   selected={boundaryState === type}>{STATE_TEXT[type]}</Button>
 }
 
 export default ControlPanel;
