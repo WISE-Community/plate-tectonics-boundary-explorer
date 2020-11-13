@@ -1,36 +1,38 @@
 import React from "react";
 import PropTypes from "prop-types";
-import PlateTypeButton from "./PlateTypeButton";
-import ArrowButton from "./ArrowButton";
+import Button from "./Button";
+import {INIT_PLATE_STATES, END_PLATE_STATES, BOUNDARY_STATES} from "../State";
 
 ControlPanel.propTypes = {
     onClick: PropTypes.func,
-    state: PropTypes.object
+    plateState: PropTypes.oneOf([...INIT_PLATE_STATES, ...END_PLATE_STATES]),
+    boundaryState: PropTypes.oneOf([...BOUNDARY_STATES, ""])
 }
 
 function ControlPanel(props) {
+    if (!INIT_PLATE_STATES.includes(props.plateState))
+        return null;
+
     return (
-        <div className="ControlPanel">
-            <PlateTypeButton orientation={"left-plate"} onClick={() => props.onClick("left-plate")}
-                    selected={props.state.plate === "left-plate"}/>
-            <PlateTypeButton orientation={"right-plate"} onClick={() => props.onClick("right-plate")}
-                    selected={props.state.plate === "right-plate"}/>
-            <div className="ArrowButtonContainer">
-                <ArrowButton orientation={"up"} onClick={() => props.onClick("up")}
-                    disabled={props.state.disabled?.includes("up")}
-                    selected={props.state.direction === "up"}/>
-                <ArrowButton orientation={"left"} onClick={() => props.onClick("left")}
-                    disabled={props.state.disabled?.includes("left")}
-                    selected={props.state.direction === "left"}/>
-                <ArrowButton orientation={"right"} onClick={() => props.onClick("right")}
-                    disabled={props.state.disabled?.includes("right")}
-                    selected={props.state.direction === "right"}/>
-                <ArrowButton orientation={"down"} onClick={() => props.onClick("down")}
-                    disabled={props.state.disabled?.includes("down")}
-                    selected={props.state.direction === "down"}/>
+        <React.Fragment>
+            <div className="PlateButtons">
+                {INIT_PLATE_STATES.map(state => plateButtonOfType(props.plateState, state, props.onClick))}
             </div>
-        </div>
+            <div className="BoundaryButtons">
+                {BOUNDARY_STATES.map(state => boundaryButtonOfType(props.boundaryState, state, props.onClick))}
+            </div>
+        </React.Fragment>
     );
+}
+function plateButtonOfType(plateState, type, onClick) {
+    return <Button key={type}
+                   onClick={() => onClick(type)}
+                   selected={plateState === type}>{type}</Button>
+}
+function boundaryButtonOfType(boundaryState, type, onClick) {
+    return <Button key={type}
+                   onClick={() => onClick(type)}
+                   selected={boundaryState === type}>{type}</Button>
 }
 
 export default ControlPanel;

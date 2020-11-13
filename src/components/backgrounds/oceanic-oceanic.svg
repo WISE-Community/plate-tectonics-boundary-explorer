@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 25.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1920 1080" style="enable-background:new 0 0 1920 1080;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#2AD8FF;}
+	.st1{fill:#C1272D;}
+	.st2{fill:#B3B3B3;}
+	.st3{fill:#CCCCCC;stroke:#000000;stroke-miterlimit:10;}
+	.st4{fill:#999999;}
+	.st5{fill:#CCCCCC;}
+	.st6{opacity:0.8;}
+	.st7{fill:#29ABE2;}
+</style>
+<g id="sky">
+	<g>
+		<rect x="0.5" y="0.5" class="st0" width="1919" height="302"/>
+		<path d="M1919,1v301H1V1H1919 M1920,0H0v303h1920V0L1920,0z"/>
+	</g>
+</g>
+<g id="mantle">
+	<g>
+		<rect x="0.5" y="584.5" class="st1" width="1919" height="495"/>
+		<path d="M1919,585v494H1V585H1919 M1920,584H0v496h1920V584L1920,584z"/>
+	</g>
+</g>
+<g id="plate">
+	<g>
+		<polygon class="st2" points="0.5,263.5 973.35,263.5 906.62,509.5 0.5,511.5 		"/>
+		<path d="M972.69,264l-66.46,245L1,511V264H972.69 M974,263H0v249l907-2L974,263L974,263z"/>
+	</g>
+	<path class="st3" d="M960,600"/>
+	<path class="st3" d="M1588.5,577.5"/>
+	<path class="st3" d="M960,600"/>
+	<g>
+		<polygon class="st4" points="917.28,541.5 898.88,510.5 1918.5,510.5 1918.5,541.5 		"/>
+		<path d="M1918,511v30H917.57l-17.81-30H1918 M1919,510H898l19,32h1002V510L1919,510z"/>
+	</g>
+	<g>
+		<polygon class="st5" points="932.41,599.5 915.66,540.5 1918.5,540.5 1918.5,599.5 		"/>
+		<path d="M1918,541v58H932.79l-16.47-58H1918 M1919,540H915l17.03,60H1919V540L1919,540z"/>
+	</g>
+	<g class="st6">
+		<polygon class="st7" points="898,480 0,480 0,231 969,231 		"/>
+	</g>
+	<g>
+		<polygon class="st4" points="0.5,539.5 0.5,510.5 906.64,510.5 916.31,539.5 		"/>
+		<path d="M906.28,511l9.33,28H1v-28H906.28 M907,510H0v30h917L907,510L907,510z"/>
+	</g>
+	<g>
+		<polygon class="st5" points="0.5,599.5 0.5,540.5 914.66,540.5 931.34,599.5 		"/>
+		<path d="M914.28,541l16.4,58H1v-58H914.28 M915.04,540H0v60h932L915.04,540L915.04,540z"/>
+	</g>
+	<g>
+		<polygon class="st2" points="974.03,262.5 1919.5,262.5 1919.5,510.5 903.66,512.5 		"/>
+		<path d="M1919,263v247l-1014.68,2l70.09-249H1919 M1920,262H973.65L903,513l1017-2V262L1920,262z"/>
+	</g>
+	<g class="st6">
+		<polygon class="st7" points="1920,480 898,482 969,231 1920,231 		"/>
+	</g>
+</g>
+<g id="arrow">
+</g>
+</svg>

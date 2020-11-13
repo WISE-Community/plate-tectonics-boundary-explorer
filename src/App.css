@@ -1,103 +1,47 @@
 .App {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-rows: [top] 60% [plate-buttons-top] 15% [plate-buttons-bottom boundary-buttons-top]
+    15% [boundary-buttons-bottom] auto [bottom];
+  grid-template-columns: [left] 30% [plate-buttons-left] 10% [boundary-buttons-left] auto [boundary-buttons-right] 10%
+    [plate-buttons-right] 30% [right];
   height: calc(100vh - 16px);
 }
 
-.HalfScreen {
-  display: grid;
-  grid-template-rows: [top] 30% [sky-bottom plate-top] 20% [plate-bottom mantle-top]
-    10% [control-panel-top] auto [bottom];
-  grid-template-columns: [left] 20% [control-panel-left] auto [control-panel-right] 20% [right];
-}
-
-.Sky {
+.Background {
   grid-column: left / right;
-  grid-row: top / sky-bottom;
-  background-color: skyblue;
+  grid-row: top / bottom;
+  z-index: -1;
 }
 
-.Plate {
-  grid-column: left / right;
-  grid-row: plate-top / plate-bottom;
-
-  display: grid;
-  grid-auto-columns: 10%;
-  grid-auto-rows: 10%;
-
-  background-color: skyblue;
+.PlateButtons, .BoundaryButtons {
+  display: flex;
+  align-items: stretch;
 }
 
-.PlateLand {
-  grid-row: 8 / 11;
-  background-color: rosybrown;
+.PlateButtons {
+  grid-column: plate-buttons-left / plate-buttons-right;
+  grid-row: plate-buttons-top / plate-buttons-bottom;
 }
 
-.PlateUnderOcean {
-  grid-row: 9 / 11;
-  background-color: rosybrown;
+.BoundaryButtons {
+  grid-column: boundary-buttons-left / boundary-buttons-right;
+  grid-row: boundary-buttons-top / boundary-buttons-bottom;
 }
 
-.PlateOcean {
-  grid-row: 8 / 9;
-  background-color: aqua;
+.PlateButtons > div, .BoundaryButtons > div {
+  flex-grow: 1;
 }
 
-.PlateLeft {
-  grid-column: 1 / 10;
-}
-
-.PlateRight {
-  grid-column: 2 / 11;
-}
-
-.Mantle {
-  grid-column: left / right;
-  grid-row: mantle-top / bottom;
-  background-color: lightcoral;
-}
-
-.ControlPanel {
-  grid-column: control-panel-left / control-panel-right;
-  grid-row: control-panel-top / bottom;
-
-  display: grid;
-  grid-template-areas:
-    "left-plate left-plate right-plate right-plate"
-    "left-plate left-plate right-plate right-plate"
-    ". arrow-container arrow-container ."
-    ". arrow-container arrow-container .";
-  background-color: lightslategray;
-}
-
-.PlateTypeButton {
-  background-color: aquamarine;
-}
-
-.ArrowButtonContainer {
-  grid-area: arrow-container;
-
-  display: grid;
-  grid-template-areas:
-    ". up ."
-    "left . right"
-    ". down .";
-}
-
-.ArrowButton {
-  background-color: lightyellow;
-}
-
-.StartRestartButton {
+.RestartButton {
   position: absolute;
   left: 0;
   right: 0;
   top: 0;
   bottom: 0;
-  margin: 40% auto auto;
+  margin: 60vh auto auto;
   width: 5vw;
   height: 5vw;
-  background-color: darkgreen;
+  background-color: lightyellow;
   z-index: 10;
 }
 
