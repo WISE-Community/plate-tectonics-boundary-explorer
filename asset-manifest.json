@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/plate-tectonics/static/css/main.ea1a4f32.chunk.css",
-    "main.js": "/plate-tectonics/static/js/main.142f24f6.chunk.js",
-    "main.js.map": "/plate-tectonics/static/js/main.142f24f6.chunk.js.map",
+    "main.js": "/plate-tectonics/static/js/main.fc68fc93.chunk.js",
+    "main.js.map": "/plate-tectonics/static/js/main.fc68fc93.chunk.js.map",
     "runtime-main.js": "/plate-tectonics/static/js/runtime-main.abf91ee3.js",
     "runtime-main.js.map": "/plate-tectonics/static/js/runtime-main.abf91ee3.js.map",
     "static/js/2.f0c925d0.chunk.js": "/plate-tectonics/static/js/2.f0c925d0.chunk.js",
     "static/js/2.f0c925d0.chunk.js.map": "/plate-tectonics/static/js/2.f0c925d0.chunk.js.map",
     "index.html": "/plate-tectonics/index.html",
-    "precache-manifest.f892316a34bf66a0427557f5cd9f6c58.js": "/plate-tectonics/precache-manifest.f892316a34bf66a0427557f5cd9f6c58.js",
+    "precache-manifest.7ed1e5f7191daa54df74b702fc47bbda.js": "/plate-tectonics/precache-manifest.7ed1e5f7191daa54df74b702fc47bbda.js",
     "service-worker.js": "/plate-tectonics/service-worker.js",
     "static/css/main.ea1a4f32.chunk.css.map": "/plate-tectonics/static/css/main.ea1a4f32.chunk.css.map",
     "static/js/2.f0c925d0.chunk.js.LICENSE.txt": "/plate-tectonics/static/js/2.f0c925d0.chunk.js.LICENSE.txt",
@@ -30,6 +30,6 @@
     "static/js/runtime-main.abf91ee3.js",
     "static/js/2.f0c925d0.chunk.js",
     "static/css/main.ea1a4f32.chunk.css",
-    "static/js/main.142f24f6.chunk.js"
+    "static/js/main.fc68fc93.chunk.js"
   ]
 }

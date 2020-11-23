@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "72cc7356707c3a16cb8c40c7e409824a",
+    "revision": "6df68f07b92fc8ac1051c0ec704e51a6",
     "url": "/plate-tectonics/index.html"
   },
   {
-    "revision": "3cad0709c99f839b91b9",
+    "revision": "683df234e54b0bc8485f",
     "url": "/plate-tectonics/static/css/main.ea1a4f32.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/plate-tectonics/static/js/2.f0c925d0.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "3cad0709c99f839b91b9",
-    "url": "/plate-tectonics/static/js/main.142f24f6.chunk.js"
+    "revision": "683df234e54b0bc8485f",
+    "url": "/plate-tectonics/static/js/main.fc68fc93.chunk.js"
   },
   {
     "revision": "705cf411ffe79539d037",
