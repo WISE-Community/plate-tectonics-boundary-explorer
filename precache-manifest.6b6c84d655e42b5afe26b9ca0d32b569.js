@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "6df68f07b92fc8ac1051c0ec704e51a6",
+    "revision": "141ca88b93dc1cf95f8d5b93ea9edee0",
     "url": "/plate-tectonics/index.html"
   },
   {
-    "revision": "683df234e54b0bc8485f",
-    "url": "/plate-tectonics/static/css/main.ea1a4f32.chunk.css"
+    "revision": "41cd2c918e9ac57fe27a",
+    "url": "/plate-tectonics/static/css/main.ddb2d44d.chunk.css"
   },
   {
-    "revision": "9fa22df5f0f2599dcdc9",
-    "url": "/plate-tectonics/static/js/2.f0c925d0.chunk.js"
+    "revision": "ca38ad69ed5c6fd5b8dd",
+    "url": "/plate-tectonics/static/js/2.8f3de9f9.chunk.js"
   },
   {
     "revision": "f5fc2afae58c4ffc30c6148864765d4b",
-    "url": "/plate-tectonics/static/js/2.f0c925d0.chunk.js.LICENSE.txt"
+    "url": "/plate-tectonics/static/js/2.8f3de9f9.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "683df234e54b0bc8485f",
-    "url": "/plate-tectonics/static/js/main.fc68fc93.chunk.js"
+    "revision": "41cd2c918e9ac57fe27a",
+    "url": "/plate-tectonics/static/js/main.0beb1ee8.chunk.js"
   },
   {
     "revision": "705cf411ffe79539d037",
@@ -54,6 +54,14 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "ca91ff7394e76e8df2b60f793fbb3b5f",
     "url": "/plate-tectonics/static/media/continental-oceanic.ca91ff73.svg"
+  },
+  {
+    "revision": "52d2b5e3b596ecc64b7d816f035025b7",
+    "url": "/plate-tectonics/static/media/convergent.52d2b5e3.svg"
+  },
+  {
+    "revision": "0cbabcaf33a987b8e3bedb8b291a33fc",
+    "url": "/plate-tectonics/static/media/divergent.0cbabcaf.svg"
   },
   {
     "revision": "4c5edc49c00644a6dbcee27093caef0d",

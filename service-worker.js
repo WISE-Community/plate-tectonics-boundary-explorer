@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/plate-tectonics/precache-manifest.7ed1e5f7191daa54df74b702fc47bbda.js"
+  "/plate-tectonics/precache-manifest.6b6c84d655e42b5afe26b9ca0d32b569.js"
 );
 
 self.addEventListener('message', (event) => {
