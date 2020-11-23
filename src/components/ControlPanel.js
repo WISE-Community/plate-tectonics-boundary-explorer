@@ -5,12 +5,13 @@ import {INIT_PLATE_STATES, END_PLATE_STATES, BOUNDARY_STATES, STATE_TEXT} from "
 
 ControlPanel.propTypes = {
     onClick: PropTypes.func,
+    hide: PropTypes.bool,
     plateState: PropTypes.oneOf([...INIT_PLATE_STATES, ...END_PLATE_STATES]),
     boundaryState: PropTypes.oneOf([...BOUNDARY_STATES, ""])
 }
 
 function ControlPanel(props) {
-    if (!INIT_PLATE_STATES.includes(props.plateState))
+    if (props.hide)
         return null;
 
     return (
