@@ -1,12 +1,14 @@
 import React from "react";
-import {ReactComponent as CC} from "./components/backgrounds/continental-continental.svg";
-import {ReactComponent as CCC} from "./components/backgrounds/continental-continental-convergent.svg";
-import {ReactComponent as CCD} from "./components/backgrounds/continental-continental-divergent.svg";
-import {ReactComponent as CO} from "./components/backgrounds/continental-oceanic.svg";
-import {ReactComponent as COC} from "./components/backgrounds/continental-oceanic-convergent.svg";
-import {ReactComponent as OO} from "./components/backgrounds/oceanic-oceanic.svg";
-import {ReactComponent as OOC} from "./components/backgrounds/oceanic-oceanic-convergent.svg";
-import {ReactComponent as OOD} from "./components/backgrounds/oceanic-oceanic-divergent.svg";
+import CC from "./components/backgrounds/continental-continental.svg";
+import CCC from "./components/backgrounds/continental-continental-convergent.svg";
+import CCD from "./components/backgrounds/continental-continental-divergent.svg";
+import CO from "./components/backgrounds/continental-oceanic.svg";
+import COC from "./components/backgrounds/continental-oceanic-convergent.svg";
+import OO from "./components/backgrounds/oceanic-oceanic.svg";
+import OOC from "./components/backgrounds/oceanic-oceanic-convergent.svg";
+import OOD from "./components/backgrounds/oceanic-oceanic-divergent.svg";
+import C from "./components/backgrounds/convergent.svg";
+import D from "./components/backgrounds/divergent.svg";
 import Mountain from "./components/backgrounds/Himalayas.png";
 import IslandArc from "./components/backgrounds/aleutian-alaska-arc.jpg";
 import Andes from "./components/backgrounds/andes.jpg";
@@ -47,22 +49,33 @@ export const SCREEN_STATES = {
 export function backgroundForState(state) {
 	switch (state) {
 		case "cc":
-			return <CC/>;
+			return CC;
 		case "ccc":
-			return <CCC/>;
+			return CCC;
 		case "ccd":
-			return <CCD/>;
+			return CCD;
 		case "co":
 		case "cod":
-			return <CO/>;
+			return CO;
 		case "coc":
-			return <COC/>;
+			return COC;
 		case "oo":
-			return <OO/>;
+			return OO;
 		case "ooc":
-			return <OOC/>;
+			return OOC;
 		case "ood":
-			return <OOD/>;
+			return OOD;
+		default:
+			return null;
+	}
+}
+
+export function boundaryForState(state) {
+	switch (state) {
+		case "c":
+			return C;
+		case "d":
+			return D;
 		default:
 			return null;
 	}

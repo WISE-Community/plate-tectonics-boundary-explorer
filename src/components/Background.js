@@ -12,7 +12,7 @@ function Background(props) {
 		return null;
 	return (
 		<div className="Background">
-			{backgroundForState(props.plateState)}
+			<img src={backgroundForState(props.plateState)}/>
 		</div>
 	);
 }

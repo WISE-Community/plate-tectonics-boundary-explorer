@@ -20,9 +20,12 @@ function RealExamplePanel(props) {
 function exampleButtonOfType(type, onClick) {
 	if (type === "cod")
 		return null;
-	return <Button key={type}
-	               onClick={() => onClick(type)}
-	               background={examplesForState(type)}>{REAL_EXAMPLES_TEXT[type]}</Button>
+	return <Button
+		key={type}
+		onClick={() => onClick(type)}
+		background={examplesForState(type)}>
+		<p>{REAL_EXAMPLES_TEXT[type]}</p>
+	</Button>
 }
 
 export default RealExamplePanel;

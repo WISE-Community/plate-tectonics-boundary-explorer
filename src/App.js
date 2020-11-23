@@ -67,7 +67,7 @@ function App() {
                 className="SelectedExample"
                 disabled={true}
                 background={examplesForState(selectedExample)}>
-                {REAL_EXAMPLES_TEXT[selectedExample]}
+                <p>{REAL_EXAMPLES_TEXT[selectedExample]}</p>
             </Button>
             <ControlPanel
                 hide={screenState !== SCREEN_STATES.plateSelection && screenState !== SCREEN_STATES.canStart}
@@ -78,13 +78,13 @@ function App() {
                 hide={screenState !== SCREEN_STATES.canStart}
                 className="StartRestartButton"
                 onClick={onStartClicked}>
-                Start
+                <p>Start</p>
             </Button>
             <Button
                 hide={screenState !== SCREEN_STATES.canRestart}
                 className="StartRestartButton"
                 onClick={onRestartClicked}>
-                Restart
+                <p>Restart</p>
             </Button>
             <Background
                 hide={screenState === SCREEN_STATES.realExampleSelection}
