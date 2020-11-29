@@ -38,12 +38,24 @@ export const REAL_EXAMPLES_TEXT = {
 	ood: "Mid-Atlantic Ridge",
 	ooc: "Aleutian-Alaska Arc"
 };
-export const INIT_TOP_TEXT = "Choose the plate boundary that created the";
+export const TOP_TEXT = {
+	realExampleSelection: "Choose a landmark to investigate!",
+	plateSelection: "Choose the plate boundary that created the",
+	canStart: "Let's begin!",
+	canRetry: "Looks like that's not what created the",
+	canRestart: "That's what created the"
+};
 export const SCREEN_STATES = {
 	realExampleSelection: 1,
 	plateSelection: 2,
 	canStart: 3,
-	canRestart: 4
+	canRetry: 4,
+	canRestart: 5
+};
+export const START_RESTART_BUTTON_TEXT = {
+	canStart: "Start",
+	canRetry: "Retry",
+	canRestart: "Restart"
 };
 
 export function backgroundForState(state) {

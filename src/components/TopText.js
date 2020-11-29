@@ -11,7 +11,9 @@ function TopText(props) {
         return null;
 
     return (
-        <h1 className="TopText">{props.text}</h1>
+        <div className="TopText">
+            <h1>{` ${props.text} `}</h1>
+        </div>
     );
 }
 

@@ -6,11 +6,12 @@ import ControlPanel from "./components/ControlPanel";
 import {
     BOUNDARY_STATES,
     INIT_PLATE_STATES,
-    INIT_TOP_TEXT,
-    END_PLATE_STATES,
+    TOP_TEXT,
     STATE_TEXT,
     SCREEN_STATES,
-    examplesForState, REAL_EXAMPLES_TEXT
+    examplesForState,
+    REAL_EXAMPLES_TEXT,
+    START_RESTART_BUTTON_TEXT
 } from "./State";
 import RealExamplePanel from "./components/RealExamplesPanel";
 import Button from "./components/Button";
@@ -20,12 +21,15 @@ function App() {
     const [plateState, setPlateState] = useState(INIT_PLATE_STATES[0]);
     const [boundaryState, setBoundaryState] = useState("");
     const [screenState, setScreenState] = useState(SCREEN_STATES.realExampleSelection);
-    const [topText, setTopText] = useState(INIT_TOP_TEXT);
+    const [topText, setTopText] = useState(TOP_TEXT.realExampleSelection);
+    const [startRestartButtonText, setStartRestartButtonText] = useState(START_RESTART_BUTTON_TEXT.canStart);
+    const [finishedRealExamples, setFinishedRealExamples] = useState([]);
 
     function onExampleButtonClicked(type) {
         selectExample(type);
-        setTopText(`${INIT_TOP_TEXT} ${REAL_EXAMPLES_TEXT[type]}!`);
+        setTopText(`${TOP_TEXT.plateSelection} ${REAL_EXAMPLES_TEXT[type]}!`);
         setScreenState(SCREEN_STATES.plateSelection);
+        setStartRestartButtonText(START_RESTART_BUTTON_TEXT.canStart);
     }
     function onControlButtonClicked(type) {
         let newBoundaryState = boundaryState;
@@ -38,30 +42,56 @@ function App() {
 
         //can start
         if (newBoundaryState !== "") {
-            setTopText("Let's begin!");
+            setTopText(TOP_TEXT.canStart);
             setScreenState(SCREEN_STATES.canStart);
         }
     }
-    function onStartClicked() {
-        setPlateState(plateState + boundaryState);
-        setTopText(STATE_TEXT[plateState + boundaryState]);
-        setScreenState(SCREEN_STATES.canRestart);
-    }
-    function onRestartClicked() {
-        setPlateState(INIT_PLATE_STATES[0]);
-        setBoundaryState("");
-        setTopText(INIT_TOP_TEXT);
-        setScreenState(SCREEN_STATES.realExampleSelection);
+    function onStartRestartClicked() {
+        switch (screenState) {
+            case SCREEN_STATES.canStart:
+                const endState = plateState + boundaryState;
+                const correct = selectedExample === endState;
+                const topTextPostfix = correct ? `${TOP_TEXT.canRestart} ${REAL_EXAMPLES_TEXT[selectedExample]}!` :
+                    `${TOP_TEXT.canRetry} ${REAL_EXAMPLES_TEXT[selectedExample]}...`;
+
+                setPlateState(endState);
+                setTopText(`A ${STATE_TEXT[boundaryState]} with ${STATE_TEXT[plateState]} plates creates:
+                ${STATE_TEXT[endState]}
+                ${topTextPostfix}`);
+
+                if (correct) {
+                    setScreenState(SCREEN_STATES.canRestart);
+                    setStartRestartButtonText(START_RESTART_BUTTON_TEXT.canRestart);
+                    setFinishedRealExamples([endState, ...finishedRealExamples]);
+                }
+                else {
+                    setScreenState(SCREEN_STATES.canRetry);
+                    setStartRestartButtonText(START_RESTART_BUTTON_TEXT.canRetry);
+                }
+                setBoundaryState("");
+                break;
+            case SCREEN_STATES.canRetry:
+                onExampleButtonClicked(selectedExample);
+                break;
+            case SCREEN_STATES.canRestart:
+                setPlateState(INIT_PLATE_STATES[0]);
+                setBoundaryState("");
+                setTopText(TOP_TEXT.realExampleSelection);
+                setScreenState(SCREEN_STATES.realExampleSelection);
+                setStartRestartButtonText(START_RESTART_BUTTON_TEXT.canStart);
+                break;
+            default:
+                console.log("StartRestartButton clicked in invalid state");
+        }
     }
 
     return (
         <div className="App">
+            <TopText text={topText}/>
             <RealExamplePanel
                 hide={screenState !== SCREEN_STATES.realExampleSelection}
+                finishedRealExamples={finishedRealExamples}
                 onClick={onExampleButtonClicked} />
-            <TopText
-                hide={screenState === SCREEN_STATES.realExampleSelection}
-                text={topText}/>
             <Button
                 hide={screenState === SCREEN_STATES.realExampleSelection}
                 className="SelectedExample"
@@ -75,16 +105,10 @@ function App() {
                 plateState={plateState}
                 boundaryState={boundaryState}/>
             <Button
-                hide={screenState !== SCREEN_STATES.canStart}
+                hide={screenState === SCREEN_STATES.realExampleSelection || screenState === SCREEN_STATES.plateSelection}
                 className="StartRestartButton"
-                onClick={onStartClicked}>
-                <p>Start</p>
-            </Button>
-            <Button
-                hide={screenState !== SCREEN_STATES.canRestart}
-                className="StartRestartButton"
-                onClick={onRestartClicked}>
-                <p>Restart</p>
+                onClick={onStartRestartClicked}>
+                <p>{startRestartButtonText}</p>
             </Button>
             <Background
                 hide={screenState === SCREEN_STATES.realExampleSelection}
