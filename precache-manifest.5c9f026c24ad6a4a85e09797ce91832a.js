@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "141ca88b93dc1cf95f8d5b93ea9edee0",
+    "revision": "ba83514e77955fc65fe893c1fc910d6a",
     "url": "/plate-tectonics/index.html"
   },
   {
-    "revision": "41cd2c918e9ac57fe27a",
-    "url": "/plate-tectonics/static/css/main.ddb2d44d.chunk.css"
+    "revision": "0f279adf0e977973476c",
+    "url": "/plate-tectonics/static/css/main.f43e7f90.chunk.css"
   },
   {
-    "revision": "ca38ad69ed5c6fd5b8dd",
-    "url": "/plate-tectonics/static/js/2.8f3de9f9.chunk.js"
+    "revision": "f8b2ca547e4ac4ab93aa",
+    "url": "/plate-tectonics/static/js/2.988eba8a.chunk.js"
   },
   {
     "revision": "f5fc2afae58c4ffc30c6148864765d4b",
-    "url": "/plate-tectonics/static/js/2.8f3de9f9.chunk.js.LICENSE.txt"
+    "url": "/plate-tectonics/static/js/2.988eba8a.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "41cd2c918e9ac57fe27a",
-    "url": "/plate-tectonics/static/js/main.0beb1ee8.chunk.js"
+    "revision": "0f279adf0e977973476c",
+    "url": "/plate-tectonics/static/js/main.96a91800.chunk.js"
   },
   {
     "revision": "705cf411ffe79539d037",
@@ -34,6 +34,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "d5ce643d6404f9b13815e7abd175a9d0",
     "url": "/plate-tectonics/static/media/andes.d5ce643d.jpg"
+  },
+  {
+    "revision": "2a4f4443ec90d6ab53708c5cd2a25ee8",
+    "url": "/plate-tectonics/static/media/check.2a4f4443.svg"
   },
   {
     "revision": "ad6e5d23316321c1292cf45e15254f46",

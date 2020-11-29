@@ -1,20 +1,21 @@
 {
   "files": {
-    "main.css": "/plate-tectonics/static/css/main.ddb2d44d.chunk.css",
-    "main.js": "/plate-tectonics/static/js/main.0beb1ee8.chunk.js",
-    "main.js.map": "/plate-tectonics/static/js/main.0beb1ee8.chunk.js.map",
+    "main.css": "/plate-tectonics/static/css/main.f43e7f90.chunk.css",
+    "main.js": "/plate-tectonics/static/js/main.96a91800.chunk.js",
+    "main.js.map": "/plate-tectonics/static/js/main.96a91800.chunk.js.map",
     "runtime-main.js": "/plate-tectonics/static/js/runtime-main.abf91ee3.js",
     "runtime-main.js.map": "/plate-tectonics/static/js/runtime-main.abf91ee3.js.map",
-    "static/js/2.8f3de9f9.chunk.js": "/plate-tectonics/static/js/2.8f3de9f9.chunk.js",
-    "static/js/2.8f3de9f9.chunk.js.map": "/plate-tectonics/static/js/2.8f3de9f9.chunk.js.map",
+    "static/js/2.988eba8a.chunk.js": "/plate-tectonics/static/js/2.988eba8a.chunk.js",
+    "static/js/2.988eba8a.chunk.js.map": "/plate-tectonics/static/js/2.988eba8a.chunk.js.map",
     "index.html": "/plate-tectonics/index.html",
-    "precache-manifest.6b6c84d655e42b5afe26b9ca0d32b569.js": "/plate-tectonics/precache-manifest.6b6c84d655e42b5afe26b9ca0d32b569.js",
+    "precache-manifest.5c9f026c24ad6a4a85e09797ce91832a.js": "/plate-tectonics/precache-manifest.5c9f026c24ad6a4a85e09797ce91832a.js",
     "service-worker.js": "/plate-tectonics/service-worker.js",
-    "static/css/main.ddb2d44d.chunk.css.map": "/plate-tectonics/static/css/main.ddb2d44d.chunk.css.map",
-    "static/js/2.8f3de9f9.chunk.js.LICENSE.txt": "/plate-tectonics/static/js/2.8f3de9f9.chunk.js.LICENSE.txt",
+    "static/css/main.f43e7f90.chunk.css.map": "/plate-tectonics/static/css/main.f43e7f90.chunk.css.map",
+    "static/js/2.988eba8a.chunk.js.LICENSE.txt": "/plate-tectonics/static/js/2.988eba8a.chunk.js.LICENSE.txt",
     "static/media/Himalayas.png": "/plate-tectonics/static/media/Himalayas.7116b03f.png",
     "static/media/aleutian-alaska-arc.jpg": "/plate-tectonics/static/media/aleutian-alaska-arc.a9593789.jpg",
     "static/media/andes.jpg": "/plate-tectonics/static/media/andes.d5ce643d.jpg",
+    "static/media/check.svg": "/plate-tectonics/static/media/check.2a4f4443.svg",
     "static/media/continental-continental-convergent.svg": "/plate-tectonics/static/media/continental-continental-convergent.ad6e5d23.svg",
     "static/media/continental-continental-divergent.svg": "/plate-tectonics/static/media/continental-continental-divergent.54462e61.svg",
     "static/media/continental-continental.svg": "/plate-tectonics/static/media/continental-continental.e77525ad.svg",
@@ -30,8 +31,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.abf91ee3.js",
-    "static/js/2.8f3de9f9.chunk.js",
-    "static/css/main.ddb2d44d.chunk.css",
-    "static/js/main.0beb1ee8.chunk.js"
+    "static/js/2.988eba8a.chunk.js",
+    "static/css/main.f43e7f90.chunk.css",
+    "static/js/main.96a91800.chunk.js"
   ]
 }
