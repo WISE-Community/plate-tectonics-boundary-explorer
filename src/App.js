@@ -30,6 +30,8 @@ function App() {
         setTopText(`${TOP_TEXT.plateSelection} ${REAL_EXAMPLES_TEXT[type]}!`);
         setScreenState(SCREEN_STATES.plateSelection);
         setStartRestartButtonText(START_RESTART_BUTTON_TEXT.canStart);
+        setPlateState(INIT_PLATE_STATES[0]);
+        setBoundaryState("");
     }
     function onControlButtonClicked(type) {
         let newBoundaryState = boundaryState;
@@ -68,7 +70,6 @@ function App() {
                     setScreenState(SCREEN_STATES.canRetry);
                     setStartRestartButtonText(START_RESTART_BUTTON_TEXT.canRetry);
                 }
-                setBoundaryState("");
                 break;
             case SCREEN_STATES.canRetry:
                 onExampleButtonClicked(selectedExample);
@@ -112,7 +113,8 @@ function App() {
             </Button>
             <Background
                 hide={screenState === SCREEN_STATES.realExampleSelection}
-                plateState={plateState}/>
+                plateState={plateState}
+                boundaryState={boundaryState}/>
         </div>
     );
 }

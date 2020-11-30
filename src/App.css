@@ -9,10 +9,60 @@
   height: calc(100vh - 16px);
 }
 
+.BackgroundContainer {
+  grid-column: left / right;
+  grid-row: top / bottom;
+  overflow: hidden;
+
+  display: grid;
+  grid-template-rows: [top] 50% [convection-top] 50% [bottom];
+  grid-template-columns: [left] 40% [left-middle] auto [right-middle] 40% [right];
+
+  z-index: -1;
+}
+
 .Background {
   grid-column: left / right;
   grid-row: top / bottom;
-  z-index: -1;
+}
+
+.Convection {
+  grid-row: convection-top / bottom;
+  z-index: 1;
+}
+
+.ConvectionLeft {
+  grid-column: left / left-middle;
+}
+
+.ConvectionRight {
+  grid-column: right-middle / right;
+}
+
+.RotateCCW {
+  animation: cwwRotateKeyframes 4s infinite linear;
+}
+
+.RotateCW {
+  animation: cwRotateKeyframes 4s infinite linear;
+}
+
+@keyframes cwRotateKeyframes {
+  from {
+    transform: rotate(0deg) scaleX(-1);
+  }
+  to {
+    transform: rotate(360deg) scaleX(-1);
+  }
+}
+
+@keyframes cwwRotateKeyframes {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
 }
 
 .PlateButtons, .BoundaryButtons {
