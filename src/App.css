@@ -40,11 +40,11 @@
 }
 
 .RotateCCW {
-  animation: cwwRotateKeyframes 4s infinite linear;
+  animation: cwwRotateKeyframes 8s infinite linear;
 }
 
 .RotateCW {
-  animation: cwRotateKeyframes 4s infinite linear;
+  animation: cwRotateKeyframes 8s infinite linear;
 }
 
 @keyframes cwRotateKeyframes {
@@ -125,7 +125,6 @@
   position: absolute;
   left: 0;
   right: 0;
-  top: 0;
   bottom: 0;
 }
 
@@ -140,9 +139,9 @@
   right: 0;
   top: 0;
   bottom: 0;
-  margin: 35vh auto auto;
+  margin: 89vh auto auto;
   width: 7vw;
-  height: 7vw;
+  height: 5vw;
   background-color: #FFEB3B;
   z-index: 10;
   text-align: center;
@@ -152,7 +151,7 @@
   position: absolute;
   left: 0;
   right: 0;
-  top: 10%;
+  top: 2%;
   text-align: center;
   white-space: pre-wrap;
   z-index: 10;
@@ -161,5 +160,5 @@
 .TopText > * {
   display: table;
   margin: 0 auto;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.5);;
 }

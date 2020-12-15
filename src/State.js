@@ -1,12 +1,27 @@
 import React from "react";
 import CC from "./components/backgrounds/continental-continental.svg";
-import CCC from "./components/backgrounds/continental-continental-convergent.svg";
-import CCD from "./components/backgrounds/continental-continental-divergent.svg";
+import CCC1 from "./components/backgrounds/continental-continental-convergent1.svg";
+import CCC2 from "./components/backgrounds/continental-continental-convergent2.svg";
+import CCC3 from "./components/backgrounds/continental-continental-convergent3.svg";
+import CCC4 from "./components/backgrounds/continental-continental-convergent4.svg";
+import CCD1 from "./components/backgrounds/continental-continental-divergent1.svg";
+import CCD2 from "./components/backgrounds/continental-continental-divergent2.svg";
+import CCD3 from "./components/backgrounds/continental-continental-divergent3.svg";
+import CCD4 from "./components/backgrounds/continental-continental-divergent4.svg";
 import CO from "./components/backgrounds/continental-oceanic.svg";
-import COC from "./components/backgrounds/continental-oceanic-convergent.svg";
+import COC1 from "./components/backgrounds/continental-oceanic-convergent1.svg";
+import COC2 from "./components/backgrounds/continental-oceanic-convergent2.svg";
+import COC3 from "./components/backgrounds/continental-oceanic-convergent3.svg";
+import COC4 from "./components/backgrounds/continental-oceanic-convergent4.svg";
 import OO from "./components/backgrounds/oceanic-oceanic.svg";
-import OOC from "./components/backgrounds/oceanic-oceanic-convergent.svg";
-import OOD from "./components/backgrounds/oceanic-oceanic-divergent.svg";
+import OOC1 from "./components/backgrounds/oceanic-oceanic-convergent1.svg";
+import OOC2 from "./components/backgrounds/oceanic-oceanic-convergent2.svg";
+import OOC3 from "./components/backgrounds/oceanic-oceanic-convergent3.svg";
+import OOC4 from "./components/backgrounds/oceanic-oceanic-convergent4.svg";
+import OOD1 from "./components/backgrounds/oceanic-oceanic-divergent1.svg";
+import OOD2 from "./components/backgrounds/oceanic-oceanic-divergent2.svg";
+import OOD3 from "./components/backgrounds/oceanic-oceanic-divergent3.svg";
+import OOD4 from "./components/backgrounds/oceanic-oceanic-divergent4.svg";
 import C from "./components/backgrounds/convergent.svg";
 import D from "./components/backgrounds/divergent.svg";
 import Mountain from "./components/backgrounds/Himalayas.png";
@@ -58,25 +73,80 @@ export const START_RESTART_BUTTON_TEXT = {
 	canRestart: "Restart"
 };
 
-export function backgroundForState(state) {
+export function backgroundForState(state, frame) {
 	switch (state) {
 		case "cc":
 			return CC;
 		case "ccc":
-			return CCC;
+			switch (frame) {
+				case 1:
+					return CCC1;
+				case 2:
+					return CCC2;
+				case 3:
+					return CCC3;
+				case 4:
+					return CCC4;
+				default:
+					return null;
+			}
 		case "ccd":
-			return CCD;
+			switch (frame) {
+				case 1:
+					return CCD1;
+				case 2:
+					return CCD2;
+				case 3:
+					return CCD3;
+				case 4:
+					return CCD4;
+				default:
+					return null;
+			}
 		case "co":
 		case "cod":
 			return CO;
 		case "coc":
-			return COC;
+			switch (frame) {
+				case 1:
+					return COC1;
+				case 2:
+					return COC2;
+				case 3:
+					return COC3;
+				case 4:
+					return COC4;
+				default:
+					return null;
+			}
 		case "oo":
 			return OO;
 		case "ooc":
-			return OOC;
+			switch (frame) {
+				case 1:
+					return OOC1;
+				case 2:
+					return OOC2;
+				case 3:
+					return OOC3;
+				case 4:
+					return OOC4;
+				default:
+					return null;
+			}
 		case "ood":
-			return OOD;
+			switch (frame) {
+				case 1:
+					return OOD1;
+				case 2:
+					return OOD2;
+				case 3:
+					return OOD3;
+				case 4:
+					return OOD4;
+				default:
+					return null;
+			}
 		default:
 			return null;
 	}

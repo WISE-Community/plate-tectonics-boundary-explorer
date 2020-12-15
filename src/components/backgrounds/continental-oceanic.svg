@@ -3,16 +3,16 @@
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 1920 1080" style="enable-background:new 0 0 1920 1080;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:#C1272D;}
-	.st1{fill:#2AD8FF;}
-	.st2{fill:#B3B3B3;}
+	.st0{fill:#B71C1C;}
+	.st1{fill:#81D4FA;}
+	.st2{fill:#BDBDBD;}
 	.st3{fill:#CCCCCC;stroke:#000000;stroke-miterlimit:10;}
-	.st4{fill:#C69C6D;}
-	.st5{fill:#009245;}
-	.st6{fill:#CCCCCC;}
+	.st4{fill:#A1887F;}
+	.st5{fill:#4CAF50;}
+	.st6{fill:#E0E0E0;}
 	.st7{opacity:0.8;}
-	.st8{fill:#29ABE2;}
-	.st9{fill:#999999;}
+	.st8{fill:#42A5F5;}
+	.st9{fill:#9E9E9E;}
 </style>
 <g id="mantle">
 	<g>
@@ -23,8 +23,8 @@
 <g id="plate">
 	<g id="sky">
 		<g>
-			<rect x="0.5" y="0.5" class="st1" width="1919" height="230"/>
-			<path d="M1919,1v229H1V1H1919 M1920,0H0v231h1920V0L1920,0z"/>
+			<rect x="0.5" y="0.5" class="st1" width="1919" height="284"/>
+			<path d="M1919,1v283H1V1H1919 M1920,0H0v285h1920V0L1920,0z"/>
 		</g>
 	</g>
 	<g>

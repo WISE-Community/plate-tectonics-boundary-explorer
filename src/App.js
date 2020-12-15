@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import './App.css';
 import Background from "./components/Background";
 import TopText from "./components/TopText";
@@ -11,7 +11,7 @@ import {
     SCREEN_STATES,
     examplesForState,
     REAL_EXAMPLES_TEXT,
-    START_RESTART_BUTTON_TEXT
+    START_RESTART_BUTTON_TEXT, END_PLATE_STATES
 } from "./State";
 import RealExamplePanel from "./components/RealExamplesPanel";
 import Button from "./components/Button";
@@ -24,6 +24,14 @@ function App() {
     const [topText, setTopText] = useState(TOP_TEXT.realExampleSelection);
     const [startRestartButtonText, setStartRestartButtonText] = useState(START_RESTART_BUTTON_TEXT.canStart);
     const [finishedRealExamples, setFinishedRealExamples] = useState([]);
+    const [animationFrame, setAnimationFrame] = useState(1);
+
+    useEffect(() => {
+       if (!END_PLATE_STATES.includes(plateState)) //start countdown when results are showing
+           return;
+       if (animationFrame !== 4)
+            setTimeout(() => setAnimationFrame(animationFrame + 1), 500);
+    });
 
     function onExampleButtonClicked(type) {
         selectExample(type);
@@ -84,6 +92,7 @@ function App() {
             default:
                 console.log("StartRestartButton clicked in invalid state");
         }
+        setAnimationFrame(1);
     }
 
     return (
@@ -114,7 +123,8 @@ function App() {
             <Background
                 hide={screenState === SCREEN_STATES.realExampleSelection}
                 plateState={plateState}
-                boundaryState={boundaryState}/>
+                boundaryState={boundaryState}
+                frame={animationFrame}/>
         </div>
     );
 }
