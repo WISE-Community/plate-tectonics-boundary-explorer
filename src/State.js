@@ -39,12 +39,12 @@ export const STATE_TEXT = {
 	oo: "Oceanic-oceanic",
 	c: "Convergent boundary",
 	d: "Divergent boundary",
-	ccd: "Rift",
-	ccc: "Mountain",
-	coc: "Subduction zone, mountains on land",
-	cod: "Who knows? We don't.",
-	ood: "Mid-ocean ridge",
-	ooc: "Subduction zone, island arcs"
+	ccd: "A rift",
+	ccc: "Mountains",
+	coc: "A subduction zone at the boundary, with mountains on land",
+	cod: "We don't know. Scientists haven't found an example of this yet on Earth, but maybe it happened sometime in Earth's past?",
+	ood: "A mid-ocean ridge",
+	ooc: "A subduction zone at the boundary, with island arcs"
 };
 export const REAL_EXAMPLES_TEXT = {
 	ccd: "East African Rift",

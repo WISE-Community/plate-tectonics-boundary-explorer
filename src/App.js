@@ -66,8 +66,8 @@ function App() {
 
                 setPlateState(endState);
                 setTopText(`A ${STATE_TEXT[boundaryState]} with ${STATE_TEXT[plateState]} plates creates:
-                ${STATE_TEXT[endState]}
-                ${topTextPostfix}`);
+${STATE_TEXT[endState]}
+${topTextPostfix}`);
 
                 if (correct) {
                     setScreenState(SCREEN_STATES.canRestart);
