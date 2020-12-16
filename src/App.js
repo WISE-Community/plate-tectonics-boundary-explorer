@@ -18,7 +18,7 @@ import Button from "./components/Button";
 
 function App() {
     const [selectedExample, selectExample] = useState("");
-    const [plateState, setPlateState] = useState(INIT_PLATE_STATES[0]);
+    const [plateState, setPlateState] = useState("");
     const [boundaryState, setBoundaryState] = useState("");
     const [screenState, setScreenState] = useState(SCREEN_STATES.realExampleSelection);
     const [topText, setTopText] = useState(TOP_TEXT.realExampleSelection);
@@ -38,20 +38,22 @@ function App() {
         setTopText(`${TOP_TEXT.plateSelection} ${REAL_EXAMPLES_TEXT[type]}!`);
         setScreenState(SCREEN_STATES.plateSelection);
         setStartRestartButtonText(START_RESTART_BUTTON_TEXT.canStart);
-        setPlateState(INIT_PLATE_STATES[0]);
+        setPlateState("");
         setBoundaryState("");
     }
     function onControlButtonClicked(type) {
-        let newBoundaryState = boundaryState;
-        if (INIT_PLATE_STATES.includes(type))
+        let canStart;
+        if (INIT_PLATE_STATES.includes(type)) {
             setPlateState(type);
+            canStart = boundaryState !== "";
+        }
         else if (BOUNDARY_STATES.includes(type)) {
-            newBoundaryState = type;
             setBoundaryState(type);
+            canStart = plateState !== "";
         }
 
         //can start
-        if (newBoundaryState !== "") {
+        if (canStart) {
             setTopText(TOP_TEXT.canStart);
             setScreenState(SCREEN_STATES.canStart);
         }
@@ -83,7 +85,7 @@ ${topTextPostfix}`);
                 onExampleButtonClicked(selectedExample);
                 break;
             case SCREEN_STATES.canRestart:
-                setPlateState(INIT_PLATE_STATES[0]);
+                setPlateState("");
                 setBoundaryState("");
                 setTopText(TOP_TEXT.realExampleSelection);
                 setScreenState(SCREEN_STATES.realExampleSelection);

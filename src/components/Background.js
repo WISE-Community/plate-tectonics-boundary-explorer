@@ -5,7 +5,7 @@ import Convection from "./backgrounds/convection.svg";
 
 Background.propTypes = {
 	hide: PropTypes.bool,
-	plateState: PropTypes.oneOf([...INIT_PLATE_STATES, ...END_PLATE_STATES]),
+	plateState: PropTypes.oneOf(["", ...INIT_PLATE_STATES, ...END_PLATE_STATES]),
 	boundaryState: PropTypes.oneOf(["", ...BOUNDARY_STATES]),
 	frame: PropTypes.number
 };
@@ -16,12 +16,14 @@ function Background(props) {
 	const leftConvectionClass = props.boundaryState === "c" ? "RotateCW" : "RotateCCW";
 	const rightConvectionClass = props.boundaryState === "c" ? "RotateCCW" : "RotateCW";
 	const hideConvection = props.boundaryState === "";
+	const hidePlateState = props.plateState === "";
 
 	return (
 		<div className="BackgroundContainer">
 			<img hidden={hideConvection} className={`Convection ConvectionLeft ${leftConvectionClass}`} src={Convection}/>
 			<img hidden={hideConvection} className={`Convection ConvectionRight ${rightConvectionClass}`} src={Convection}/>
-			<img className="Background" src={backgroundForState(props.plateState, props.frame)}/>
+			{hidePlateState ? "" :
+				<img className="Background" src={backgroundForState(props.plateState, props.frame)}/>}
 		</div>
 	);
 }
