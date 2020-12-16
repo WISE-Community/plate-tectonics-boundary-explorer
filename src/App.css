@@ -3,7 +3,8 @@
 
   display: grid;
   grid-template-rows: [top] 2% [example-picture-top] 18% [example-picture-bottom] 40% [plate-buttons-top]
-    15% [plate-buttons-bottom boundary-buttons-top] 15% [boundary-buttons-bottom] auto [bottom];
+    15% [plate-buttons-bottom boundary-buttons-top] 15% [boundary-buttons-bottom control-buttons-top]
+  10% [control-buttons-bottom] auto [bottom];
   grid-template-columns: [left] 30% [plate-buttons-left] 8% [boundary-buttons-left] auto [boundary-buttons-right]
     8% [plate-buttons-right] 15% [example-picture-left] 13% [example-picture-right] 2% [right];
   height: calc(100vh - 16px);
@@ -80,9 +81,22 @@
   grid-row: boundary-buttons-top / boundary-buttons-bottom;
 }
 
+.ControlButtons {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  bottom: 16px;
+  text-align: center;
+}
+
 .PlateButtons > div, .BoundaryButtons > div {
   flex-grow: 1;
   flex-basis: 0;
+}
+
+.ControlButtons > img {
+  width: 4vw;
 }
 
 .SelectedExample {
@@ -131,20 +145,6 @@
 .SelectedButton {
   background-color: rgba(0, 230, 118, 0.3);
   z-index: 10;
-}
-
-.StartRestartButton {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  margin: 89vh auto auto;
-  width: 7vw;
-  height: 5vw;
-  background-color: #FFEB3B;
-  z-index: 10;
-  text-align: center;
 }
 
 .TopText {

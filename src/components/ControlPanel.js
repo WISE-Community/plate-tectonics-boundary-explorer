@@ -6,8 +6,8 @@ import {INIT_PLATE_STATES, END_PLATE_STATES, BOUNDARY_STATES, STATE_TEXT, backgr
 ControlPanel.propTypes = {
     onClick: PropTypes.func,
     hide: PropTypes.bool,
-    plateState: PropTypes.oneOf([...INIT_PLATE_STATES, ...END_PLATE_STATES]),
-    boundaryState: PropTypes.oneOf([...BOUNDARY_STATES, ""])
+    plateState: PropTypes.oneOf(["", ...INIT_PLATE_STATES, ...END_PLATE_STATES]),
+    boundaryState: PropTypes.oneOf(["", ...BOUNDARY_STATES])
 }
 
 function ControlPanel(props) {
