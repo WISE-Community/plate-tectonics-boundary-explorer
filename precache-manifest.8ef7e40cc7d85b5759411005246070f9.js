@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "cac9c5dc69347ae78605178d1038138a",
+    "revision": "70c778263557b3495d6e731e1e273d22",
     "url": "/plate-tectonics/index.html"
   },
   {
-    "revision": "edfad8a806332d241a2b",
-    "url": "/plate-tectonics/static/css/main.e061c499.chunk.css"
+    "revision": "242a3f1dc034acd42ea6",
+    "url": "/plate-tectonics/static/css/main.34bcb1a7.chunk.css"
   },
   {
-    "revision": "eca34c60382d7d939475",
-    "url": "/plate-tectonics/static/js/2.ceba7064.chunk.js"
+    "revision": "85f1cf18866df95d020a",
+    "url": "/plate-tectonics/static/js/2.f979fe3e.chunk.js"
   },
   {
     "revision": "f5fc2afae58c4ffc30c6148864765d4b",
-    "url": "/plate-tectonics/static/js/2.ceba7064.chunk.js.LICENSE.txt"
+    "url": "/plate-tectonics/static/js/2.f979fe3e.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "edfad8a806332d241a2b",
-    "url": "/plate-tectonics/static/js/main.c3d95e88.chunk.js"
+    "revision": "242a3f1dc034acd42ea6",
+    "url": "/plate-tectonics/static/js/main.09ede5c8.chunk.js"
   },
   {
     "revision": "705cf411ffe79539d037",
@@ -108,6 +108,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/plate-tectonics/static/media/divergent.0cbabcaf.svg"
   },
   {
+    "revision": "da8a7cf3c25b877a84afd383e835a315",
+    "url": "/plate-tectonics/static/media/home.da8a7cf3.svg"
+  },
+  {
     "revision": "4c5edc49c00644a6dbcee27093caef0d",
     "url": "/plate-tectonics/static/media/mid-atlantic-ridge.4c5edc49.jpg"
   },
@@ -148,7 +152,15 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/plate-tectonics/static/media/oceanic-oceanic.1e74e312.svg"
   },
   {
+    "revision": "b4728a918e079e994c62e9c23f85fb9e",
+    "url": "/plate-tectonics/static/media/retry.b4728a91.svg"
+  },
+  {
     "revision": "8972def4fd31119160c885de63f935c5",
     "url": "/plate-tectonics/static/media/rift.8972def4.jpg"
+  },
+  {
+    "revision": "668f985fb44282f532bb7bb0f55a1098",
+    "url": "/plate-tectonics/static/media/start.668f985f.svg"
   }
 ]);
