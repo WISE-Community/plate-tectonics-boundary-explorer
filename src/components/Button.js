@@ -21,7 +21,7 @@ function Button(props) {
                     borderColor: props.selected ? "blue" : "lightyellow"}}
              onClick={props.disabled ? null : props.onClick}>
             {props.selected ? <div className="SelectedButton" /> : null}
-            {props.checked ? <img src={Check}/> : null}
+            {props.checked ? <img className="CheckInButton" src={Check}/> : null}
             {props.children}
         </div>
     );

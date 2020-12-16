@@ -142,6 +142,17 @@
   bottom: 0;
 }
 
+.ComboInButton {
+  top: 0;
+  width: 50%;
+  background-repeat: no-repeat;
+}
+
+.CheckInButton {
+  width: 50%;
+  margin: 0 auto;
+}
+
 .SelectedButton {
   background-color: rgba(0, 230, 118, 0.3);
   z-index: 10;

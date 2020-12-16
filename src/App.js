@@ -11,7 +11,7 @@ import {
     SCREEN_STATES,
     examplesForState,
     REAL_EXAMPLES_TEXT,
-    START_RESTART_BUTTON_TEXT, END_PLATE_STATES
+    END_PLATE_STATES
 } from "./State";
 import RealExamplePanel from "./components/RealExamplesPanel";
 import Button from "./components/Button";

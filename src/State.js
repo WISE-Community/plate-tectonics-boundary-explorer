@@ -39,12 +39,12 @@ export const STATE_TEXT = {
 	oo: "Oceanic-oceanic",
 	c: "Convergent boundary",
 	d: "Divergent boundary",
-	ccd: "A rift",
-	ccc: "Mountains",
-	coc: "A subduction zone at the boundary, with mountains on land",
+	ccd: "A rift.",
+	ccc: "Mountains.",
+	coc: "A subduction zone at the boundary, with mountains on land.",
 	cod: "We don't know. Scientists haven't found an example of this yet on Earth, but maybe it happened sometime in Earth's past?",
-	ood: "A mid-ocean ridge",
-	ooc: "A subduction zone at the boundary, with island arcs"
+	ood: "A mid-ocean ridge.",
+	ooc: "A subduction zone at the boundary, with island arcs."
 };
 export const REAL_EXAMPLES_TEXT = {
 	ccd: "East African Rift",
@@ -66,11 +66,6 @@ export const SCREEN_STATES = {
 	canStart: 3,
 	canRetry: 4,
 	canRestart: 5
-};
-export const START_RESTART_BUTTON_TEXT = {
-	canStart: "Start",
-	canRetry: "Retry",
-	canRestart: "Restart"
 };
 
 export function backgroundForState(state, frame) {
