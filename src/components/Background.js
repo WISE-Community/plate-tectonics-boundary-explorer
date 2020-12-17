@@ -22,7 +22,7 @@ function Background(props) {
 		<div className="BackgroundContainer">
 			<img hidden={hideConvection} className={`Convection ConvectionLeft ${leftConvectionClass}`} src={Convection}/>
 			<img hidden={hideConvection} className={`Convection ConvectionRight ${rightConvectionClass}`} src={Convection}/>
-			{hidePlateState ? "" :
+			{hidePlateState ? null :
 				<img className="Background" src={backgroundForState(props.plateState, props.frame)}/>}
 		</div>
 	);

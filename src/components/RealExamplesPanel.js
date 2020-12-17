@@ -3,8 +3,6 @@ import PropTypes from "prop-types";
 import Button from "./Button";
 import {
 	REAL_EXAMPLES_TEXT,
-	INIT_PLATE_STATES,
-	BOUNDARY_STATES,
 	examplesForState,
 	backgroundForState,
 	boundaryForState,
@@ -14,45 +12,37 @@ import {
 RealExamplePanel.propTypes = {
 	finishedRealExamples: PropTypes.array,
 	hide: PropTypes.bool,
-	onClick: PropTypes.func
+	hoverExample: PropTypes.string,
+	hoverCoordinates: PropTypes.array
 }
 
 function RealExamplePanel(props) {
-	if (props.hide)
+	if (props.hide || !props.hoverExample || props.hoverExample === "")
 		return null;
-	return (
-		<div className="RealExamplePanel">
-			{INIT_PLATE_STATES.map(plateState =>
-				BOUNDARY_STATES.map(boundaryState =>
-					exampleButtonOfType(plateState, boundaryState,
-						props.finishedRealExamples.includes(`${plateState}${boundaryState}`), props.onClick)
-				))}
-		</div>
-	);
-}
-function exampleButtonOfType(plateState, boundaryState, finished, onClick) {
-	const endState = `${plateState}${boundaryState}`;
-	if (endState === "cod")
-		return null;
+	const plateType = props.hoverExample.substring(0, 2);
+	const boundaryType = props.hoverExample.substring(2, 3);
+	const finished = props.finishedRealExamples.includes(props.hoverExample);
 	return (
 		<Button
-			key={endState}
-			onClick={() => onClick(endState)}
+			className="RealExamplePanel"
+			style={{top: props.hoverCoordinates[1], left: props.hoverCoordinates[0]}}
+			disabled={true}
 			checked={finished}
-			background={examplesForState(endState)}>
+			background={examplesForState(props.hoverExample)}>
 			{finished ? <React.Fragment>
-				<div className="ComboInButton" key={plateState} style={{
-					backgroundImage: `url(${backgroundForState(plateState)})`}}>
-					<p>{STATE_TEXT[plateState]}</p>
+				<div className="ComboInButton" style={{
+					backgroundImage: `url(${backgroundForState(plateType)})`}}>
+					<p>{STATE_TEXT[plateType]}</p>
 				</div>
-				<div className="ComboInButton" key={boundaryState} style={{
+				<div className="ComboInButton" style={{
 					left: "50%",
-					backgroundImage: `url(${boundaryForState(boundaryState)})`}}>
-					<p>{STATE_TEXT[boundaryState]}</p>
+					backgroundImage: `url(${boundaryForState(boundaryType)})`}}>
+					<p>{STATE_TEXT[boundaryType]}</p>
 				</div>
 			</React.Fragment> : null}
-			<p>{REAL_EXAMPLES_TEXT[endState]}</p>
-		</Button>);
+			<p>{REAL_EXAMPLES_TEXT[props.hoverExample]}</p>
+		</Button>
+	);
 }
 
 export default RealExamplePanel;

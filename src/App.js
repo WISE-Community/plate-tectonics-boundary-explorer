@@ -18,8 +18,11 @@ import Button from "./components/Button";
 import Home from "./components/backgrounds/home.svg";
 import Retry from "./components/backgrounds/retry.svg";
 import Start from "./components/backgrounds/start.svg";
+import WorldMap from "./components/WorldMap";
 
 function App() {
+    const [hoveringOverExample, setHoverExample] = useState("");
+    const [hoverCoordinates, setHoverCoordinates] = useState([0, 0]);
     const [selectedExample, selectExample] = useState("");
     const [plateState, setPlateState] = useState("");
     const [boundaryState, setBoundaryState] = useState("");
@@ -107,7 +110,8 @@ ${topTextPostfix}`);
             <RealExamplePanel
                 hide={screenState !== SCREEN_STATES.realExampleSelection}
                 finishedRealExamples={finishedRealExamples}
-                onClick={onExampleButtonClicked} />
+                hoverCoordinates={hoverCoordinates}
+                hoverExample={hoveringOverExample} />
             <Button
                 hide={screenState === SCREEN_STATES.realExampleSelection}
                 className="SelectedExample"
@@ -129,6 +133,14 @@ ${topTextPostfix}`);
                 plateState={plateState}
                 boundaryState={boundaryState}
                 frame={animationFrame}/>
+            <WorldMap
+                hide={screenState !== SCREEN_STATES.realExampleSelection}
+                onHover={(event, example) => {
+                    setHoverExample(example);
+                    setHoverCoordinates([event.clientX, event.clientY]);
+                }}
+                endHover={() => setHoverExample("")}
+                onClick={onExampleButtonClicked}/>
         </div>
     );
 }
