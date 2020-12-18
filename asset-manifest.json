@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/plate-tectonics/static/css/main.87b9a02f.chunk.css",
-    "main.js": "/plate-tectonics/static/js/main.8cd9ceea.chunk.js",
-    "main.js.map": "/plate-tectonics/static/js/main.8cd9ceea.chunk.js.map",
+    "main.js": "/plate-tectonics/static/js/main.693ee492.chunk.js",
+    "main.js.map": "/plate-tectonics/static/js/main.693ee492.chunk.js.map",
     "runtime-main.js": "/plate-tectonics/static/js/runtime-main.abf91ee3.js",
     "runtime-main.js.map": "/plate-tectonics/static/js/runtime-main.abf91ee3.js.map",
-    "static/js/2.51d67a59.chunk.js": "/plate-tectonics/static/js/2.51d67a59.chunk.js",
-    "static/js/2.51d67a59.chunk.js.map": "/plate-tectonics/static/js/2.51d67a59.chunk.js.map",
+    "static/js/2.bfa5c37d.chunk.js": "/plate-tectonics/static/js/2.bfa5c37d.chunk.js",
+    "static/js/2.bfa5c37d.chunk.js.map": "/plate-tectonics/static/js/2.bfa5c37d.chunk.js.map",
     "index.html": "/plate-tectonics/index.html",
-    "precache-manifest.47ef743af5d7dcd73a5b1a79eccb6e8a.js": "/plate-tectonics/precache-manifest.47ef743af5d7dcd73a5b1a79eccb6e8a.js",
+    "precache-manifest.add52071ae170388055a491912f19280.js": "/plate-tectonics/precache-manifest.add52071ae170388055a491912f19280.js",
     "service-worker.js": "/plate-tectonics/service-worker.js",
     "static/css/main.87b9a02f.chunk.css.map": "/plate-tectonics/static/css/main.87b9a02f.chunk.css.map",
-    "static/js/2.51d67a59.chunk.js.LICENSE.txt": "/plate-tectonics/static/js/2.51d67a59.chunk.js.LICENSE.txt",
+    "static/js/2.bfa5c37d.chunk.js.LICENSE.txt": "/plate-tectonics/static/js/2.bfa5c37d.chunk.js.LICENSE.txt",
     "static/media/Himalayas.png": "/plate-tectonics/static/media/Himalayas.7116b03f.png",
     "static/media/aleutian-alaska-arc-mask.svg": "/plate-tectonics/static/media/aleutian-alaska-arc-mask.e759f3b6.svg",
     "static/media/aleutian-alaska-arc.jpg": "/plate-tectonics/static/media/aleutian-alaska-arc.a9593789.jpg",
@@ -56,8 +56,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.abf91ee3.js",
-    "static/js/2.51d67a59.chunk.js",
+    "static/js/2.bfa5c37d.chunk.js",
     "static/css/main.87b9a02f.chunk.css",
-    "static/js/main.8cd9ceea.chunk.js"
+    "static/js/main.693ee492.chunk.js"
   ]
 }
