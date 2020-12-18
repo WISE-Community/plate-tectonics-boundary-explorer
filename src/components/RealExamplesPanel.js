@@ -27,7 +27,6 @@ function RealExamplePanel(props) {
 			className="RealExamplePanel"
 			style={{top: props.hoverCoordinates[1], left: props.hoverCoordinates[0]}}
 			disabled={true}
-			checked={finished}
 			background={examplesForState(props.hoverExample)}>
 			{finished ? <React.Fragment>
 				<div className="ComboInButton" style={{

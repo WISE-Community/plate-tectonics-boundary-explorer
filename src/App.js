@@ -44,7 +44,6 @@ function App() {
     function onExampleButtonClicked(type) {
         selectExample(type);
         setTopText(<React.Fragment>{TOP_TEXT.plateSelection} {REAL_EXAMPLES_TEXT[type]}!</React.Fragment>);
-        setAfterInputText("");
         setScreenState(SCREEN_STATES.plateSelection);
         setPlateState("");
         setBoundaryState("");
@@ -120,7 +119,6 @@ function App() {
                     {STATE_TEXT[endState]} <br/>
                     {topTextPostfix}
                 </React.Fragment>);
-                setInput("");
                 setAfterInputText("");
                 break;
             case SCREEN_STATES.canRetry:
@@ -185,6 +183,7 @@ function App() {
                     setHoverCoordinates([event.clientX, event.clientY]);
                 }}
                 endHover={() => setHoverExample("")}
+                finishedRealExamples={finishedRealExamples}
                 onClick={onExampleButtonClicked}/>
         </div>
     );

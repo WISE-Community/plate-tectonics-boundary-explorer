@@ -29,6 +29,11 @@ import IslandArc from "./components/backgrounds/aleutian-alaska-arc.jpg";
 import Andes from "./components/backgrounds/andes.jpg";
 import Rift from "./components/backgrounds/rift.jpg";
 import Ridge from "./components/backgrounds/mid-atlantic-ridge.jpg";
+import AleutianAlaskaArcMask from "./components/backgrounds/aleutian-alaska-arc-mask.svg";
+import HimalayasMask from "./components/backgrounds/himalayas-mask.svg";
+import AndesMask from "./components/backgrounds/andes-mask.svg";
+import EastAfricanRiftMask from "./components/backgrounds/east-african-rift-mask.svg";
+import MidAtlanticRidgeMask from "./components/backgrounds/mid-atlantic-ridge-mask.svg";
 
 export const MIN_INPUT_LENGTH = 5;
 export const INIT_PLATE_STATES = ["cc", "co", "oo"];
@@ -174,6 +179,40 @@ export function examplesForState(state) {
 			return IslandArc;
 		case "ood":
 			return Ridge;
+		default:
+			return null;
+	}
+}
+
+export function maskForState(state) {
+	switch (state) {
+		case "ccc":
+			return HimalayasMask;
+		case "ccd":
+			return EastAfricanRiftMask;
+		case "coc":
+			return AndesMask;
+		case "ooc":
+			return AleutianAlaskaArcMask;
+		case "ood":
+			return MidAtlanticRidgeMask;
+		default:
+			return null;
+	}
+}
+
+export function maskClassForState(state) {
+	switch (state) {
+		case "ccc":
+			return "HimalayasMask";
+		case "ccd":
+			return "EastAfricanRiftMask";
+		case "coc":
+			return "AndesMask";
+		case "ooc":
+			return "AleutianAlaskaArcMask";
+		case "ood":
+			return "MidAtlanticRidgeMask";
 		default:
 			return null;
 	}
