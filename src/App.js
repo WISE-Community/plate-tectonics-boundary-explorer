@@ -7,11 +7,12 @@ import {
     BOUNDARY_STATES,
     INIT_PLATE_STATES,
     TOP_TEXT,
+    AFTER_INPUT_TEXT,
     STATE_TEXT,
     SCREEN_STATES,
     examplesForState,
     REAL_EXAMPLES_TEXT,
-    END_PLATE_STATES
+    END_PLATE_STATES, splitEndState, MIN_INPUT_LENGTH
 } from "./State";
 import RealExamplePanel from "./components/RealExamplesPanel";
 import Button from "./components/Button";
@@ -28,6 +29,8 @@ function App() {
     const [boundaryState, setBoundaryState] = useState("");
     const [screenState, setScreenState] = useState(SCREEN_STATES.realExampleSelection);
     const [topText, setTopText] = useState(TOP_TEXT.realExampleSelection);
+    const [afterInputText, setAfterInputText] = useState("");
+    const [input, setInput] = useState("");
     const [finishedRealExamples, setFinishedRealExamples] = useState([]);
     const [animationFrame, setAnimationFrame] = useState(1);
 
@@ -40,7 +43,8 @@ function App() {
 
     function onExampleButtonClicked(type) {
         selectExample(type);
-        setTopText(`${TOP_TEXT.plateSelection} ${REAL_EXAMPLES_TEXT[type]}!`);
+        setTopText(<React.Fragment>{TOP_TEXT.plateSelection} {REAL_EXAMPLES_TEXT[type]}!</React.Fragment>);
+        setAfterInputText("");
         setScreenState(SCREEN_STATES.plateSelection);
         setPlateState("");
         setBoundaryState("");
@@ -59,29 +63,65 @@ function App() {
         //can start
         if (canStart) {
             setTopText(TOP_TEXT.canStart);
+            setAfterInputText(AFTER_INPUT_TEXT.canStart);
             setScreenState(SCREEN_STATES.canStart);
         }
     }
     function onStartRetryClicked() {
         switch (screenState) {
             case SCREEN_STATES.canStart:
+                if (input.split(' ').length < MIN_INPUT_LENGTH) {
+                    //prompt for more text
+                    setTopText(
+                    <React.Fragment>
+                        Remember to <span style={{color: "#D32F2F"}}>{TOP_TEXT.canStart}</span>
+                    </React.Fragment>);
+                    return;
+                }
+
                 const endState = plateState + boundaryState;
                 const correct = selectedExample === endState;
-                const topTextPostfix = correct ? `${TOP_TEXT.canRestart} ${REAL_EXAMPLES_TEXT[selectedExample]}!` :
-                    `${TOP_TEXT.canRetry} ${REAL_EXAMPLES_TEXT[selectedExample]}...`;
-
-                setPlateState(endState);
-                setTopText(`A ${STATE_TEXT[boundaryState]} with ${STATE_TEXT[plateState]} plates creates:
-${STATE_TEXT[endState]}
-${topTextPostfix}`);
+                let topTextPostfix;
 
                 if (correct) {
+                    topTextPostfix = `${TOP_TEXT.canRestart} ${REAL_EXAMPLES_TEXT[selectedExample]}!`;
                     setScreenState(SCREEN_STATES.canRestart);
                     setFinishedRealExamples([endState, ...finishedRealExamples]);
                 }
                 else {
+                    //tell user what parts they got right
+                    const [selectedPlateType, selectedBoundaryType] = splitEndState(selectedExample);
+                    topTextPostfix = (
+                    <React.Fragment>
+                        {TOP_TEXT.canRetry} {REAL_EXAMPLES_TEXT[selectedExample]}... <br/>
+                        {selectedPlateType === plateState ?
+                            <React.Fragment>
+                                But you were right about the <span style={{color: "#D32F2F"}}>{STATE_TEXT[plateState]}</span> plates!
+                                <br/>
+                            </React.Fragment> : null}
+                        {selectedBoundaryType === boundaryState ?
+                            <React.Fragment>
+                                But you were right about the <span style={{color: "#D32F2F"}}>{STATE_TEXT[boundaryState]}</span>!
+                                <br/>
+                            </React.Fragment>: null}
+                        Click the Retry button to try again!
+                    </React.Fragment>);
                     setScreenState(SCREEN_STATES.canRetry);
                 }
+
+                setPlateState(endState);
+                setTopText(
+                <React.Fragment>
+                    A
+                    <span style={{color: "#D32F2F"}}> {STATE_TEXT[boundaryState]} </span>
+                    with
+                    <span style={{color: "#D32F2F"}}> {STATE_TEXT[plateState]} </span>
+                    plates creates: <br/>
+                    {STATE_TEXT[endState]} <br/>
+                    {topTextPostfix}
+                </React.Fragment>);
+                setInput("");
+                setAfterInputText("");
                 break;
             case SCREEN_STATES.canRetry:
                 onExampleButtonClicked(selectedExample);
@@ -95,6 +135,8 @@ ${topTextPostfix}`);
         setPlateState("");
         setBoundaryState("");
         setTopText(TOP_TEXT.realExampleSelection);
+        setAfterInputText("");
+        setInput("");
         setScreenState(SCREEN_STATES.realExampleSelection);
     }
 
@@ -106,7 +148,10 @@ ${topTextPostfix}`);
 
     return (
         <div className="App">
-            <TopText text={topText}/>
+            <TopText
+                text={topText}
+                afterInputText={afterInputText}
+                onInputChanged={event => setInput(event.target.value)}/>
             <RealExamplePanel
                 hide={screenState !== SCREEN_STATES.realExampleSelection}
                 finishedRealExamples={finishedRealExamples}

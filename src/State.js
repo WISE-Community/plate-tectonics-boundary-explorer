@@ -30,6 +30,7 @@ import Andes from "./components/backgrounds/andes.jpg";
 import Rift from "./components/backgrounds/rift.jpg";
 import Ridge from "./components/backgrounds/mid-atlantic-ridge.jpg";
 
+export const MIN_INPUT_LENGTH = 5;
 export const INIT_PLATE_STATES = ["cc", "co", "oo"];
 export const END_PLATE_STATES = ["ccc", "ccd", "coc", "cod", "ooc", "ood"];
 export const BOUNDARY_STATES = ["c", "d"];
@@ -56,9 +57,12 @@ export const REAL_EXAMPLES_TEXT = {
 export const TOP_TEXT = {
 	realExampleSelection: "Choose a landmark to investigate!",
 	plateSelection: "Choose the plate boundary that created the",
-	canStart: "Let's begin!",
+	canStart: "Write your prediction below:",
 	canRetry: "Looks like that's not what created the",
 	canRestart: "That's what created the"
+};
+export const AFTER_INPUT_TEXT = {
+	canStart: "then click the Play button to begin!"
 };
 export const SCREEN_STATES = {
 	realExampleSelection: 1,
@@ -173,4 +177,10 @@ export function examplesForState(state) {
 		default:
 			return null;
 	}
+}
+
+export function splitEndState(state) {
+	const plateType = state.substring(0, 2);
+	const boundaryType = state.substring(2, 3);
+	return [plateType, boundaryType];
 }

@@ -6,6 +6,7 @@ import {
 	examplesForState,
 	backgroundForState,
 	boundaryForState,
+	splitEndState,
 	STATE_TEXT
 } from "../State";
 
@@ -19,8 +20,7 @@ RealExamplePanel.propTypes = {
 function RealExamplePanel(props) {
 	if (props.hide || !props.hoverExample || props.hoverExample === "")
 		return null;
-	const plateType = props.hoverExample.substring(0, 2);
-	const boundaryType = props.hoverExample.substring(2, 3);
+	const [plateType, boundaryType] = splitEndState(props.hoverExample);
 	const finished = props.finishedRealExamples.includes(props.hoverExample);
 	return (
 		<Button

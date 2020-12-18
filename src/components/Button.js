@@ -20,7 +20,7 @@ function Button(props) {
     return (
         <div className={`Button ${props.className}`}
              style={{backgroundImage: props.background ? `url(${props.background})` : null,
-                    borderColor: props.selected ? "blue" : "lightyellow",
+                    borderColor: props.selected ? "#2962FF" : "#FFEA00",
                     ...style}}
              onClick={props.disabled ? null : props.onClick}>
             {props.selected ? <div className="SelectedButton" /> : null}

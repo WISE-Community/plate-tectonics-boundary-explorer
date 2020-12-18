@@ -3,7 +3,9 @@ import PropTypes from "prop-types";
 
 TopText.propTypes = {
     hide: PropTypes.bool,
-    text: PropTypes.string
+    text: PropTypes.object,
+    afterInputText: PropTypes.string,
+    onInputChanged: PropTypes.func
 }
 
 function TopText(props) {
@@ -12,7 +14,13 @@ function TopText(props) {
 
     return (
         <div className="TopText">
-            <h1>{` ${props.text} `}</h1>
+            <h1> {props.text} </h1>
+            {props.afterInputText ?
+            <React.Fragment>
+                <textarea className="TopTextInput" placeholder="Type your responses here!" rows={3}
+                    onChange={props.onInputChanged}/>
+                <h1> {props.afterInputText} </h1>
+            </React.Fragment> : null}
         </div>
     );
 }
