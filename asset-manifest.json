@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/plate-tectonics/static/css/main.f4b9ffd1.chunk.css",
-    "main.js": "/plate-tectonics/static/js/main.3452bf11.chunk.js",
-    "main.js.map": "/plate-tectonics/static/js/main.3452bf11.chunk.js.map",
+    "main.css": "/plate-tectonics/static/css/main.87b9a02f.chunk.css",
+    "main.js": "/plate-tectonics/static/js/main.8cd9ceea.chunk.js",
+    "main.js.map": "/plate-tectonics/static/js/main.8cd9ceea.chunk.js.map",
     "runtime-main.js": "/plate-tectonics/static/js/runtime-main.abf91ee3.js",
     "runtime-main.js.map": "/plate-tectonics/static/js/runtime-main.abf91ee3.js.map",
     "static/js/2.51d67a59.chunk.js": "/plate-tectonics/static/js/2.51d67a59.chunk.js",
     "static/js/2.51d67a59.chunk.js.map": "/plate-tectonics/static/js/2.51d67a59.chunk.js.map",
     "index.html": "/plate-tectonics/index.html",
-    "precache-manifest.b646eb6cf82084bd7b2904d5ac1a8c7f.js": "/plate-tectonics/precache-manifest.b646eb6cf82084bd7b2904d5ac1a8c7f.js",
+    "precache-manifest.47ef743af5d7dcd73a5b1a79eccb6e8a.js": "/plate-tectonics/precache-manifest.47ef743af5d7dcd73a5b1a79eccb6e8a.js",
     "service-worker.js": "/plate-tectonics/service-worker.js",
-    "static/css/main.f4b9ffd1.chunk.css.map": "/plate-tectonics/static/css/main.f4b9ffd1.chunk.css.map",
+    "static/css/main.87b9a02f.chunk.css.map": "/plate-tectonics/static/css/main.87b9a02f.chunk.css.map",
     "static/js/2.51d67a59.chunk.js.LICENSE.txt": "/plate-tectonics/static/js/2.51d67a59.chunk.js.LICENSE.txt",
     "static/media/Himalayas.png": "/plate-tectonics/static/media/Himalayas.7116b03f.png",
     "static/media/aleutian-alaska-arc-mask.svg": "/plate-tectonics/static/media/aleutian-alaska-arc-mask.e759f3b6.svg",
@@ -57,7 +57,7 @@
   "entrypoints": [
     "static/js/runtime-main.abf91ee3.js",
     "static/js/2.51d67a59.chunk.js",
-    "static/css/main.f4b9ffd1.chunk.css",
-    "static/js/main.3452bf11.chunk.js"
+    "static/css/main.87b9a02f.chunk.css",
+    "static/js/main.8cd9ceea.chunk.js"
   ]
 }
