@@ -28,7 +28,7 @@ function App() {
     const [plateState, setPlateState] = useState("");
     const [boundaryState, setBoundaryState] = useState("");
     const [screenState, setScreenState] = useState(SCREEN_STATES.realExampleSelection);
-    const [topText, setTopText] = useState(TOP_TEXT.realExampleSelection);
+    const [topText, setTopText] = useState(<React.Fragment>{TOP_TEXT.realExampleSelection}</React.Fragment>);
     const [afterInputText, setAfterInputText] = useState("");
     const [input, setInput] = useState("");
     const [finishedRealExamples, setFinishedRealExamples] = useState([]);
@@ -61,7 +61,7 @@ function App() {
 
         //can start
         if (canStart) {
-            setTopText(TOP_TEXT.canStart);
+            setTopText(<React.Fragment>{TOP_TEXT.canStart}</React.Fragment>);
             setAfterInputText(AFTER_INPUT_TEXT.canStart);
             setScreenState(SCREEN_STATES.canStart);
         }
@@ -132,7 +132,7 @@ function App() {
     function onRestartClicked() {
         setPlateState("");
         setBoundaryState("");
-        setTopText(TOP_TEXT.realExampleSelection);
+        setTopText(<React.Fragment>{TOP_TEXT.realExampleSelection}</React.Fragment>);
         setAfterInputText("");
         setInput("");
         setScreenState(SCREEN_STATES.realExampleSelection);

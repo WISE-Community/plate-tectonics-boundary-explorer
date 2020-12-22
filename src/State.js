@@ -1,4 +1,3 @@
-import React from "react";
 import CC from "./components/backgrounds/continental-continental.svg";
 import CCC1 from "./components/backgrounds/continental-continental-convergent1.svg";
 import CCC2 from "./components/backgrounds/continental-continental-convergent2.svg";
@@ -35,7 +34,7 @@ import AndesMask from "./components/backgrounds/andes-mask.svg";
 import EastAfricanRiftMask from "./components/backgrounds/east-african-rift-mask.svg";
 import MidAtlanticRidgeMask from "./components/backgrounds/mid-atlantic-ridge-mask.svg";
 
-export const MIN_INPUT_LENGTH = 5;
+export const MIN_INPUT_LENGTH = 3;
 export const INIT_PLATE_STATES = ["cc", "co", "oo"];
 export const END_PLATE_STATES = ["ccc", "ccd", "coc", "cod", "ooc", "ood"];
 export const BOUNDARY_STATES = ["c", "d"];

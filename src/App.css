@@ -108,6 +108,9 @@
   top: -16vw;
   left: 35vw;
 }
+.Check {
+  width: 10vw !important;
+}
 
 .PlateButtons, .BoundaryButtons {
   display: flex;
