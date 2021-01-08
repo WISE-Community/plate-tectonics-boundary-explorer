@@ -16,7 +16,7 @@ function Button(props) {
         return null;
     const style = props.style ? props.style : null;
     return (
-        <div className={`Button ${props.className}`}
+        <div className={`Button ${props.className} ${props.disabled ? null : "ButtonClickable"}`}
              style={{backgroundImage: props.background ? `url(${props.background})` : null,
                     borderColor: props.selected ? "#2962FF" : "#FFEA00",
                     ...style}}

@@ -175,8 +175,13 @@ function App() {
                 plateState={plateState}
                 boundaryState={boundaryState}/>
             <div className="ControlButtons" hidden={screenState === SCREEN_STATES.realExampleSelection}>
-                <img src={Home} onClick={onRestartClicked}/>
-                <img src={startRetryButton} onClick={onStartRetryClicked} hidden={screenState === SCREEN_STATES.canRestart}/>
+                <img className={screenState === SCREEN_STATES.canRestart ? "ResizingButtons" : null}
+                     src={Home}
+                     onClick={onRestartClicked}/>
+                <img className="ResizingButtons"
+                     src={startRetryButton}
+                     onClick={onStartRetryClicked}
+                     hidden={screenState === SCREEN_STATES.canRestart}/>
             </div>
             <Background
                 hide={screenState === SCREEN_STATES.realExampleSelection}
