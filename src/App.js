@@ -12,7 +12,7 @@ import {
     SCREEN_STATES,
     examplesForState,
     REAL_EXAMPLES_TEXT,
-    END_PLATE_STATES, splitEndState, MIN_INPUT_LENGTH
+    END_PLATE_STATES, splitEndState, MIN_INPUT_LENGTH, locationForState
 } from "./State";
 import RealExamplePanel from "./components/RealExamplesPanel";
 import Button from "./components/Button";
@@ -161,6 +161,13 @@ function App() {
                 disabled={true}
                 background={examplesForState(selectedExample)}>
                 <p>{REAL_EXAMPLES_TEXT[selectedExample]}</p>
+            </Button>
+            <Button
+                hide={screenState === SCREEN_STATES.realExampleSelection}
+                className="SelectedLocation"
+                disabled={true}
+                background={locationForState(selectedExample)}>
+                <p>Where it is</p>
             </Button>
             <ControlPanel
                 hide={screenState !== SCREEN_STATES.plateSelection && screenState !== SCREEN_STATES.canStart}

@@ -2,11 +2,12 @@
   font-family: sans-serif;
 
   display: grid;
-  grid-template-rows: [top] 2% [example-picture-top] 18% [example-picture-bottom] 40% [plate-buttons-top]
+  grid-template-rows: [top] 2% [example-picture-top] 28% [example-picture-bottom] 30% [plate-buttons-top]
     15% [plate-buttons-bottom boundary-buttons-top] 15% [boundary-buttons-bottom control-buttons-top]
-  10% [control-buttons-bottom] auto [bottom];
-  grid-template-columns: [left] 30% [plate-buttons-left] 8% [boundary-buttons-left] auto [boundary-buttons-right]
-    8% [plate-buttons-right] 15% [example-picture-left] 13% [example-picture-right] 2% [right];
+    10% [control-buttons-bottom] auto [bottom];
+  grid-template-columns: [left] 1% [location-picture-left] 18% [location-picture-right] 11%
+    [plate-buttons-left] 8% [boundary-buttons-left] auto [boundary-buttons-right] 8% [plate-buttons-right] 11%
+    [example-picture-left] 18% [example-picture-right] 1% [right];
   height: calc(100vh - 16px);
 }
 
@@ -110,6 +111,7 @@
 }
 .Check {
   width: 10vw !important;
+  pointer-events: none;
 }
 
 .PlateButtons, .BoundaryButtons {
@@ -147,6 +149,12 @@
 
 .SelectedExample {
   grid-column: example-picture-left / example-picture-right;
+  grid-row: example-picture-top / example-picture-bottom;
+  font-size: large !important;
+}
+
+.SelectedLocation {
+  grid-column: location-picture-left / location-picture-right;
   grid-row: example-picture-top / example-picture-bottom;
   font-size: large !important;
 }
@@ -217,7 +225,7 @@
 }
 
 .TopTextInput {
-  width: 60%;
+  width: 50%;
   font-size: 2vw;
   overflow: hidden;
 }

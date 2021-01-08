@@ -33,6 +33,11 @@ import HimalayasMask from "./components/backgrounds/himalayas-mask.svg";
 import AndesMask from "./components/backgrounds/andes-mask.svg";
 import EastAfricanRiftMask from "./components/backgrounds/east-african-rift-mask.svg";
 import MidAtlanticRidgeMask from "./components/backgrounds/mid-atlantic-ridge-mask.svg";
+import MountainLocation from "./components/backgrounds/himalayas-location.jpg";
+import IslandArcLocation from "./components/backgrounds/aleutian-alaska-arc-location.png";
+import AndesLocation from "./components/backgrounds/andes-location.jpg";
+import RiftLocation from "./components/backgrounds/east-african-rift-location.jpg";
+import RidgeLocation from "./components/backgrounds/mid-atlantic-ridge-location.png";
 
 export const MIN_INPUT_LENGTH = 3;
 export const INIT_PLATE_STATES = ["cc", "co", "oo"];
@@ -61,7 +66,7 @@ export const REAL_EXAMPLES_TEXT = {
 export const TOP_TEXT = {
 	realExampleSelection: "Choose a landmark to investigate!",
 	plateSelection: "Choose the plate boundary that created the",
-	canStart: "Write your prediction below:",
+	canStart: "Write your prediction below (in a full sentence):",
 	canRetry: "Looks like that's not what created the",
 	canRestart: "That's what created the"
 };
@@ -178,6 +183,23 @@ export function examplesForState(state) {
 			return IslandArc;
 		case "ood":
 			return Ridge;
+		default:
+			return null;
+	}
+}
+
+export function locationForState(state) {
+	switch (state) {
+		case "ccc":
+			return MountainLocation;
+		case "ccd":
+			return RiftLocation;
+		case "coc":
+			return AndesLocation;
+		case "ooc":
+			return IslandArcLocation;
+		case "ood":
+			return RidgeLocation;
 		default:
 			return null;
 	}
