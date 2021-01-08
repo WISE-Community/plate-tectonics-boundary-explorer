@@ -14,12 +14,12 @@ function TopText(props) {
 
     return (
         <div className="TopText">
-            <h1> {props.text} </h1>
+            <p> {props.text} </p>
             {props.afterInputText ?
             <React.Fragment>
                 <textarea className="TopTextInput" placeholder="Type your responses here!" rows={3}
                     onChange={props.onInputChanged}/>
-                <h1> {props.afterInputText} </h1>
+                <p> {props.afterInputText} </p>
             </React.Fragment> : null}
         </div>
     );

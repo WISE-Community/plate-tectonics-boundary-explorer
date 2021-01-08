@@ -91,20 +91,22 @@ function App() {
                     //tell user what parts they got right
                     const [selectedPlateType, selectedBoundaryType] = splitEndState(selectedExample);
                     topTextPostfix = (
-                    <React.Fragment>
-                        {TOP_TEXT.canRetry} {REAL_EXAMPLES_TEXT[selectedExample]}... <br/>
-                        {selectedPlateType === plateState ?
-                            <React.Fragment>
-                                But you were right about the <span style={{color: "#D32F2F"}}>{STATE_TEXT[plateState]}</span> plates!
-                                <br/>
-                            </React.Fragment> : null}
-                        {selectedBoundaryType === boundaryState ?
-                            <React.Fragment>
-                                But you were right about the <span style={{color: "#D32F2F"}}>{STATE_TEXT[boundaryState]}</span>!
-                                <br/>
-                            </React.Fragment>: null}
-                        Click the Retry button to try again!
-                    </React.Fragment>);
+                        <React.Fragment>
+                            {TOP_TEXT.canRetry} {REAL_EXAMPLES_TEXT[selectedExample]}... <br/>
+                            {selectedPlateType === plateState ?
+                                <React.Fragment>
+                                    But <span style={{textDecoration: "underline"}}>you were right about the <span
+                                    style={{color: "#D32F2F"}}>{STATE_TEXT[plateState]}</span> plates!</span>
+                                    <br/>
+                                </React.Fragment> : null}
+                            {selectedBoundaryType === boundaryState ?
+                                <React.Fragment>
+                                    But <span style={{textDecoration: "underline"}}>you were right about the <span
+                                    style={{color: "#D32F2F"}}>{STATE_TEXT[boundaryState]}</span>!</span>
+                                    <br/>
+                                </React.Fragment> : null}
+                            Click the Retry button to try again!
+                        </React.Fragment>);
                     setScreenState(SCREEN_STATES.canRetry);
                 }
 
@@ -116,7 +118,7 @@ function App() {
                     with
                     <span style={{color: "#D32F2F"}}> {STATE_TEXT[plateState]} </span>
                     plates creates: <br/>
-                    {STATE_TEXT[endState]} <br/>
+                    {STATE_TEXT[endState]} <br/> <br/>
                     {topTextPostfix}
                 </React.Fragment>);
                 setAfterInputText("");
