@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "0ddd4ae739dd07bd0ea236f57535da7f",
+    "revision": "187a7197d73136b92089d683b204c1d4",
     "url": "/plate-tectonics/index.html"
   },
   {
-    "revision": "acbf45ed4fe9c036c868",
-    "url": "/plate-tectonics/static/css/main.5ff1b545.chunk.css"
+    "revision": "d6ebb8f4b6b2bdd128a6",
+    "url": "/plate-tectonics/static/css/main.df57a396.chunk.css"
   },
   {
-    "revision": "1bc3af23ed0c75d010e7",
-    "url": "/plate-tectonics/static/js/2.51d67a59.chunk.js"
+    "revision": "3f419bca16dea39d5cab",
+    "url": "/plate-tectonics/static/js/2.a53953f7.chunk.js"
   },
   {
     "revision": "f5fc2afae58c4ffc30c6148864765d4b",
-    "url": "/plate-tectonics/static/js/2.51d67a59.chunk.js.LICENSE.txt"
+    "url": "/plate-tectonics/static/js/2.a53953f7.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "acbf45ed4fe9c036c868",
-    "url": "/plate-tectonics/static/js/main.6a29d29e.chunk.js"
+    "revision": "d6ebb8f4b6b2bdd128a6",
+    "url": "/plate-tectonics/static/js/main.a122b936.chunk.js"
   },
   {
     "revision": "705cf411ffe79539d037",
@@ -28,6 +28,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/plate-tectonics/static/media/Himalayas.7116b03f.png"
   },
   {
+    "revision": "842f5e987b4a69d165eb186bd5d5a476",
+    "url": "/plate-tectonics/static/media/aleutian-alaska-arc-location.842f5e98.png"
+  },
+  {
     "revision": "e759f3b686c5b8103ec82995c9c607dc",
     "url": "/plate-tectonics/static/media/aleutian-alaska-arc-mask.e759f3b6.svg"
   },
@@ -36,12 +40,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/plate-tectonics/static/media/aleutian-alaska-arc.a9593789.jpg"
   },
   {
+    "revision": "c7e8e38983ca97a7ddf8b93db1e916c5",
+    "url": "/plate-tectonics/static/media/andes-location.c7e8e389.jpg"
+  },
+  {
     "revision": "4041f449459195d1f06c0c878fd62ad8",
     "url": "/plate-tectonics/static/media/andes-mask.4041f449.svg"
   },
   {
-    "revision": "d5ce643d6404f9b13815e7abd175a9d0",
-    "url": "/plate-tectonics/static/media/andes.d5ce643d.jpg"
+    "revision": "76843f1f0293dec8e28e37a23aaab531",
+    "url": "/plate-tectonics/static/media/andes.76843f1f.jpg"
   },
   {
     "revision": "2a4f4443ec90d6ab53708c5cd2a25ee8",
@@ -116,8 +124,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/plate-tectonics/static/media/divergent.0cbabcaf.svg"
   },
   {
+    "revision": "e8bb5e319ec0e8ac2aea6b93781fa60b",
+    "url": "/plate-tectonics/static/media/east-african-rift-location.e8bb5e31.jpg"
+  },
+  {
     "revision": "c9ad3bd2c87a84bc58d9dfcf8f23f7ab",
     "url": "/plate-tectonics/static/media/east-african-rift-mask.c9ad3bd2.svg"
+  },
+  {
+    "revision": "4b46ec56dc5b2509390dcea6e8f9164d",
+    "url": "/plate-tectonics/static/media/himalayas-location.4b46ec56.jpg"
   },
   {
     "revision": "86af0b8326602e7f737bd49fbb050515",
@@ -132,12 +148,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/plate-tectonics/static/media/map.fb98398d.jpg"
   },
   {
+    "revision": "170142560a2a709c896ac19f6cf011dc",
+    "url": "/plate-tectonics/static/media/mid-atlantic-ridge-location.17014256.png"
+  },
+  {
     "revision": "88de7ccfa06d36d6c853244568f7d98a",
     "url": "/plate-tectonics/static/media/mid-atlantic-ridge-mask.88de7ccf.svg"
   },
   {
-    "revision": "4c5edc49c00644a6dbcee27093caef0d",
-    "url": "/plate-tectonics/static/media/mid-atlantic-ridge.4c5edc49.jpg"
+    "revision": "d1f75138bb32702894985fe1b73be88b",
+    "url": "/plate-tectonics/static/media/mid-atlantic-ridge.d1f75138.jpg"
   },
   {
     "revision": "249a777e68ff240ce33341d7612b4203",
