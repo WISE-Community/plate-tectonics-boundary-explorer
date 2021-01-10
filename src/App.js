@@ -12,7 +12,7 @@ import {
     SCREEN_STATES,
     examplesForState,
     REAL_EXAMPLES_TEXT,
-    END_PLATE_STATES, splitEndState, MIN_INPUT_LENGTH, locationForState
+    END_PLATE_STATES, splitEndState, MIN_INPUT_LENGTH, locationForState, maskClassForState
 } from "./State";
 import RealExamplePanel from "./components/RealExamplesPanel";
 import Button from "./components/Button";
@@ -20,6 +20,7 @@ import Home from "./components/backgrounds/home.svg";
 import Retry from "./components/backgrounds/retry.svg";
 import Start from "./components/backgrounds/start.svg";
 import WorldMap from "./components/WorldMap";
+import Check from "./components/backgrounds/check.svg";
 
 function App() {
     const [hoveringOverExample, setHoverExample] = useState("");
@@ -185,6 +186,8 @@ function App() {
                      onClick={onStartRetryClicked}
                      hidden={screenState === SCREEN_STATES.canRestart}/>
             </div>
+            <img className="Check CenteredCheck" src={Check}
+                 hidden={screenState !== SCREEN_STATES.canRestart}/>
             <Background
                 hide={screenState === SCREEN_STATES.realExampleSelection}
                 plateState={plateState}

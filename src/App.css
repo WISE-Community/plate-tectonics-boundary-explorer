@@ -27,6 +27,9 @@
 .Background {
   grid-column: left / right;
   grid-row: top / bottom;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .Convection {
@@ -66,6 +69,24 @@
   to {
     transform: rotate(0deg);
   }
+}
+
+.Label {
+  background-color: rgba(255, 255, 255, 0.5);
+  font-size: 1.5vw;
+  position: absolute;
+}
+.LabelLeft {
+  top: 48vh;
+  left: 2vw;
+}
+.LabelRight {
+  top: 48vh;
+  right: 2vw;
+}
+.LabelMantle {
+  top: 55vh;
+  left: 2vw;
 }
 
 .WorldMap {
@@ -112,6 +133,12 @@
 .Check {
   width: 10vw !important;
   pointer-events: none;
+}
+
+.CenteredCheck {
+  position: absolute;
+  top: 55vh;
+  left: 45vw;
 }
 
 .PlateButtons, .BoundaryButtons {
@@ -255,7 +282,7 @@
 .TopText > * {
   display: table;
   margin: 0 auto;
-  background-color: rgba(255, 255, 255, 0.5);;
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 .TopTextInput {

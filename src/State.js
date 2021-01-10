@@ -80,6 +80,11 @@ export const SCREEN_STATES = {
 	canRetry: 4,
 	canRestart: 5
 };
+export const LABELS = {
+	oceanic: "Oceanic crust",
+	continental: "Continental crust",
+	mantle: "Mantle"
+}
 
 export function backgroundForState(state, frame) {
 	switch (state) {

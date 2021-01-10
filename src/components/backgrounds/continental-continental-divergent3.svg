@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 25.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!-- Generator: Adobe Illustrator 25.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 1920 1080" style="enable-background:new 0 0 1920 1080;" xml:space="preserve">
 <style type="text/css">
@@ -9,10 +9,9 @@
 	.st3{fill:#795548;stroke:#000000;stroke-miterlimit:10;}
 	.st4{fill:#43A047;}
 	.st5{fill:#4CAF50;}
-	.st6{fill:#E0E0E0;}
-	.st7{fill:#A1887F;stroke:#000000;stroke-miterlimit:10;}
-	.st8{fill:#8D6E63;stroke:#000000;stroke-miterlimit:10;}
-	.st9{stroke:#000000;stroke-miterlimit:10;}
+	.st6{fill:#A1887F;stroke:#000000;stroke-miterlimit:10;}
+	.st7{fill:#8D6E63;stroke:#000000;stroke-miterlimit:10;}
+	.st8{stroke:#000000;stroke-miterlimit:10;}
 </style>
 <g id="sky">
 	<g>
@@ -69,28 +68,28 @@
 		<path d="M789.28,484l19.33,58H-106v-58H789.28 M790,483h-897v60h917L790,483L790,483z"/>
 	</g>
 	<g>
-		<polygon class="st6" points="-152.5,599.5 -152.5,540.5 927.6,540.5 947.31,599.5 		"/>
+		<polygon class="st2" points="-152.5,599.5 -152.5,540.5 927.6,540.5 947.31,599.5 		"/>
 		<path d="M927.24,541l19.37,58H-152v-58H927.24 M927.96,540H-153v60H948L927.96,540L927.96,540z"/>
 	</g>
 	<g>
-		<polygon class="st6" points="945.42,599.5 926.68,540.5 2048.5,540.5 2048.5,599.5 		"/>
+		<polygon class="st2" points="945.42,599.5 926.68,540.5 2048.5,540.5 2048.5,599.5 		"/>
 		<path d="M2048,541v58H945.78l-18.42-58H2048 M2049,540H926l19.05,60H2049V540L2049,540z"/>
 	</g>
-	<polygon class="st7" points="797.5,505.5 790.18,481.81 862.5,233.5 870.5,262.5 	"/>
+	<polygon class="st6" points="797.5,505.5 790.18,481.81 862.5,233.5 870.5,262.5 	"/>
 	<g>
 		<polygon class="st4" points="871.38,260.48 907.32,258.54 835.62,503.52 797.68,505.46 		"/>
 		<path d="M906.64,259.07l-71.4,243.96l-36.87,1.89l73.39-243.97L906.64,259.07 M908,258l-37,2l-74,246l39-2L908,258L908,258z"/>
 	</g>
-	<polygon class="st8" points="841.5,529.5 834.17,506.07 906.5,257.76 913.5,277.5 	"/>
+	<polygon class="st7" points="841.5,529.5 834.17,506.07 906.5,257.76 913.5,277.5 	"/>
 </g>
 <g id="arrow">
-	<polygon class="st9" points="1359.5,358.74 1359.45,340.05 1389.07,338.26 1388.37,322.12 1430.47,344.82 1390.59,373.57 
+	<polygon class="st8" points="1359.5,358.74 1359.45,340.05 1389.07,338.26 1388.37,322.12 1430.47,344.82 1390.59,373.57 
 		1389.9,357.43 	"/>
-	<polygon class="st9" points="390.87,338.94 389.45,357.58 359.79,357.05 359.22,373.19 319.03,347.28 361.03,321.72 360.46,337.87 
+	<polygon class="st8" points="390.87,338.94 389.45,357.58 359.79,357.05 359.22,373.19 319.03,347.28 361.03,321.72 360.46,337.87 
 			"/>
-	<polygon class="st9" points="1216.5,577.4 1216.45,558.7 1246.07,556.92 1245.37,540.78 1287.47,563.47 1247.59,592.23 
+	<polygon class="st8" points="1216.5,577.4 1216.45,558.7 1246.07,556.92 1245.37,540.78 1287.47,563.47 1247.59,592.23 
 		1246.9,576.09 	"/>
-	<polygon class="st9" points="523.12,558.03 521.71,576.68 492.04,576.14 491.47,592.29 451.28,566.38 493.28,540.82 492.71,556.97 
+	<polygon class="st8" points="523.12,558.03 521.71,576.68 492.04,576.14 491.47,592.29 451.28,566.38 493.28,540.82 492.71,556.97 
 			"/>
 </g>
 </svg>
