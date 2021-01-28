@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import './App.css';
 import Background from "./components/Background";
 import TopText from "./components/TopText";
@@ -34,6 +34,8 @@ function App() {
     const [input, setInput] = useState("");
     const [finishedRealExamples, setFinishedRealExamples] = useState([]);
     const [animationFrame, setAnimationFrame] = useState(1);
+    const [attempts, setAttempts] = useState([]);
+    const isLoaded = useRef();
 
     useEffect(() => {
        if (!END_PLATE_STATES.includes(plateState)) //start countdown when results are showing
@@ -41,6 +43,51 @@ function App() {
        if (animationFrame !== 4)
             setTimeout(() => setAnimationFrame(animationFrame + 1), 500);
     });
+
+    useEffect(() => {
+      isLoaded.current = false;
+      window.addEventListener("message", (message) => {
+          if (message.data.messageType === 'componentState' && message.data.componentState != null) {
+              loadLatestStateFromWISE(message.data.componentState);
+          } 
+      });
+      // timeout is needed to establish connection between this model and WISE
+      setTimeout(() => {
+          window.postMessage({messageType: 'applicationInitialized'}, '*')
+      }, 2000);
+    }, []);
+
+    useEffect(() => {
+      if (attempts.length == 0) { 
+      } else if (!isLoaded.current) {
+        isLoaded.current = true;
+      } else {
+        try {
+          const componentState = {
+            messageType: 'studentWork',
+            isAutoSave: false,
+            isSubmit: false,
+            studentData: {
+              attempts: attempts
+            }
+          };
+          window.postMessage(componentState, '*')
+        } catch (e) {
+          console.error('message not posted');
+        }
+      }
+    }, [attempts]);
+
+    function loadLatestStateFromWISE(state) {
+        setAttempts(state.studentData.attempts);
+        const finishedRealExamples = [];
+        for (const attempt of state.studentData.attempts) {
+            if (attempt.isCorrect) {
+                finishedRealExamples.push(attempt.endState);
+            }
+        }
+        setFinishedRealExamples(finishedRealExamples);
+    }
 
     function onExampleButtonClicked(type) {
         selectExample(type);
@@ -110,7 +157,17 @@ function App() {
                         </React.Fragment>);
                     setScreenState(SCREEN_STATES.canRetry);
                 }
-
+                const newAttempt = {
+                    plateState: plateState,
+                    boundaryState: boundaryState,
+                    studentText: input,
+                    endState: endState,
+                    selectedExample: selectedExample,
+                    selectedExampleText: REAL_EXAMPLES_TEXT[selectedExample], 
+                    isCorrect: correct,
+                    timestamp: new Date().getTime()
+                }
+                setAttempts([...attempts, newAttempt]);
                 setPlateState(endState);
                 setTopText(
                 <React.Fragment>
@@ -146,7 +203,7 @@ function App() {
         startRetryButton = Start;
     else if (screenState === SCREEN_STATES.canRetry)
         startRetryButton = Retry;
-
+    
     return (
         <div className="App">
             <TopText
