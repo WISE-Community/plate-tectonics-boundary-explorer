@@ -35,7 +35,6 @@ function App() {
     const [finishedRealExamples, setFinishedRealExamples] = useState([]);
     const [animationFrame, setAnimationFrame] = useState(1);
     const [attempts, setAttempts] = useState([]);
-    const isLoaded = useRef();
 
     useEffect(() => {
        if (!END_PLATE_STATES.includes(plateState)) //start countdown when results are showing
@@ -45,7 +44,6 @@ function App() {
     });
 
     useEffect(() => {
-      isLoaded.current = false;
       window.addEventListener("message", (message) => {
           if (message.data.messageType === 'componentState' && message.data.componentState != null) {
               loadLatestStateFromWISE(message.data.componentState);
@@ -56,27 +54,6 @@ function App() {
           window.postMessage({messageType: 'applicationInitialized'}, '*')
       }, 2000);
     }, []);
-
-    useEffect(() => {
-      if (attempts.length == 0) { 
-      } else if (!isLoaded.current) {
-        isLoaded.current = true;
-      } else {
-        try {
-          const componentState = {
-            messageType: 'studentWork',
-            isAutoSave: false,
-            isSubmit: false,
-            studentData: {
-              attempts: attempts
-            }
-          };
-          window.postMessage(componentState, '*')
-        } catch (e) {
-          console.error('message not posted');
-        }
-      }
-    }, [attempts]);
 
     function loadLatestStateFromWISE(state) {
         setAttempts(state.studentData.attempts);
@@ -167,7 +144,21 @@ function App() {
                     isCorrect: correct,
                     timestamp: new Date().getTime()
                 }
-                setAttempts([...attempts, newAttempt]);
+                const newAttempts = [...attempts, newAttempt];
+                setAttempts(newAttempts);
+                try {
+                    const componentState = {
+                        messageType: 'studentWork',
+                        isAutoSave: false,
+                        isSubmit: false,
+                        studentData: {
+                            attempts: newAttempts
+                        }
+                    };
+                    window.postMessage(componentState, '*')
+                } catch (e) {
+                    console.error('message not posted');
+                }
                 setPlateState(endState);
                 setTopText(
                 <React.Fragment>
