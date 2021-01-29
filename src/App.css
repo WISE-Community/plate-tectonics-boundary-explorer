@@ -2,10 +2,12 @@
   font-family: sans-serif;
 
   display: grid;
-  grid-template-rows: [top] 2% [example-picture-top] 28% [example-picture-bottom] 30% [plate-buttons-top]
+  grid-template-rows:
+    [top] 2% [example-picture-top] 28% [example-picture-bottom] 30% [plate-buttons-top]
     15% [plate-buttons-bottom boundary-buttons-top] 15% [boundary-buttons-bottom control-buttons-top]
     10% [control-buttons-bottom] auto [bottom];
-  grid-template-columns: [left] 1% [location-picture-left] 18% [location-picture-right] 11%
+  grid-template-columns:
+    [left] 1% [location-picture-left] 18% [location-picture-right] 11%
     [plate-buttons-left] 8% [boundary-buttons-left] auto [boundary-buttons-right] 8% [plate-buttons-right] 11%
     [example-picture-left] 18% [example-picture-right] 1% [right];
   height: calc(100vh - 16px);
@@ -141,7 +143,8 @@
   left: 45vw;
 }
 
-.PlateButtons, .BoundaryButtons {
+.PlateButtons,
+.BoundaryButtons {
   display: flex;
   align-items: stretch;
 }
@@ -165,19 +168,20 @@
   text-align: center;
 }
 
-.PlateButtons > div, .BoundaryButtons > div {
+.PlateButtons > div,
+.BoundaryButtons > div {
   flex-grow: 1;
   flex-basis: 0;
 }
 
 .ControlButtons > img {
   width: 4vw;
-  filter: drop-shadow( 0px 2px 2px rgba(0, 0, 0, .5));
+  filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.5));
   transition: all 0.1s ease-in-out;
 }
 
 .ControlButtons > img:hover {
-  filter: drop-shadow( 0px 5px 15px rgba(0, 0, 0, 1));
+  filter: drop-shadow(0px 5px 15px rgba(0, 0, 0, 1));
   transform: scale(1.1, 1.1);
 }
 
@@ -234,12 +238,12 @@
 }
 
 .ButtonClickable {
-  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   transition: all 0.1s ease-in-out;
 }
 
 .ButtonClickable:hover {
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   transform: scale(1.05, 1.05);
 }
 
