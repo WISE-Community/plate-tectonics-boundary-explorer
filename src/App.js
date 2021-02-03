@@ -42,6 +42,7 @@ function App() {
   const [finishedRealExamples, setFinishedRealExamples] = useState([]);
   const [animationFrame, setAnimationFrame] = useState(1);
   const [attempts, setAttempts] = useState([]);
+  const [attemptsLoaded, setAttemptsLoaded] = useState(false);
 
   useEffect(() => {
     if (!END_PLATE_STATES.includes(plateState))
@@ -64,6 +65,7 @@ function App() {
 
   function loadLatestStateFromWISE(state) {
     setAttempts(state.studentData.attempts);
+    setAttemptsLoaded(true);
     const finishedRealExamples = [];
     for (const attempt of state.studentData.attempts) {
       if (attempt.isCorrect) {
@@ -212,22 +214,46 @@ function App() {
     return urlParams.has('mode') && urlParams.get('mode') === 'showLocationSummary';
   }
 
-  function getLocationParam() {
+  function getParam(param) {
     const urlParams = new URLSearchParams(window.location.search);
-    return urlParams.get('location');
+    return urlParams.get(param);
   }
 
   function showLocationSummary() {
-    const location = getLocationParam();
-    const attemptsForLocation = attempts.filter((attempt) => {
-      return attempt.selectedExample === location;
-    });
-    if (attemptsForLocation.length > 0) {
-      const lastAttempt = attemptsForLocation[attemptsForLocation.length - 1];
-      return <LocationSummary attempt={lastAttempt} location={location} />;
-    } else {
+    if (!attemptsLoaded) {
       return null;
     }
+    const location = getParam('location');
+    const attemptsForLocation = getAttemptsForLocation(location);
+    let lastAttempt = null;
+    if (attemptsForLocation.length > 0) {
+      lastAttempt = attemptsForLocation[attemptsForLocation.length - 1];
+    }
+    return showLocationAttempt(lastAttempt, location);
+  }
+
+  function getAttemptsForLocation(location) {
+    let locationAttempts = [];
+    if (attempts) {
+      locationAttempts = attempts.filter((attempt) => {
+        return attempt.selectedExample === location;
+      });
+    }
+    return locationAttempts;
+  }
+
+  function showLocationAttempt(lastAttempt, location) {
+    const showLocationText = getParam('showLocationText') === 'false' ? false : true;
+    const showBoundarySelection = getParam('showBoundarySelection') === 'false' ? false : true;
+    const showStudentText = getParam('showStudentText') === 'false' ? false : true;
+    return (
+      <LocationSummary 
+        attempt={lastAttempt}
+        location={location}
+        showLocationText={showLocationText}
+        showBoundarySelection={showBoundarySelection}
+        showStudentText={showStudentText} />
+    );
   }
 
   function showDefaultMode() {
