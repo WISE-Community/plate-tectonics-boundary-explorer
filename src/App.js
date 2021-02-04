@@ -243,9 +243,9 @@ function App() {
   }
 
   function showLocationAttempt(lastAttempt, location) {
-    const showLocationText = getParam('showLocationText') === 'false' ? false : true;
-    const showBoundarySelection = getParam('showBoundarySelection') === 'false' ? false : true;
-    const showStudentText = getParam('showStudentText') === 'false' ? false : true;
+    const showLocationText = getParam('showLocationText') !== 'false';
+    const showBoundarySelection = getParam('showBoundarySelection') !== 'false';
+    const showStudentText = getParam('showStudentText') !== 'false';
     return (
       <LocationSummary 
         attempt={lastAttempt}
