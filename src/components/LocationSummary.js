@@ -15,6 +15,7 @@ function LocationSummary(props) {
     'ccc': 'Continental-Continental, Convergent',
     'ccd': 'Continental-Continental, Divergent',
     'coc': 'Continental-Oceanic, Convergent',
+    'cod': 'Continental-Oceanic, Divergent',
     'ooc': 'Oceanic-Oceanic, Convergent',
     'ood': 'Oceanic-Oceanic, Divergent'
   };
