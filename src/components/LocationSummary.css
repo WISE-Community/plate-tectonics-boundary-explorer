@@ -1,0 +1,39 @@
+.Location {
+  font-size: 16px;
+  color: #333333;
+  font-family: Roboto, 'Helvetica Nueue', sans-serif;
+}
+
+.attempt {
+  padding: .5em;
+  border-radius: 6px;
+  border: 2px solid #1565C0;
+}
+
+.attempt h4 {
+  margin: 0 0 .25em;
+  font-size: 1.25em;
+  font-weight: 400;
+  color: #1565C0;
+}
+
+.attempt p {
+  margin: .25em 0;
+}
+
+.attempt.no-data {
+  font-weight: 500;
+  color: #C62828;
+  text-align: center;
+  border-color: #C62828;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.correct {
+  color: #00C853;
+}
+
+.incorrect {
+  color: #C62828;
+}

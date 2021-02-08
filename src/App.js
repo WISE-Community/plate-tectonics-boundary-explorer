@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import './App.css';
 import Background from './components/Background';
 import TopText from './components/TopText';
+import LocationSummary from './components/LocationSummary';
 import ControlPanel from './components/ControlPanel';
 import {
   BOUNDARY_STATES,
@@ -41,6 +42,7 @@ function App() {
   const [finishedRealExamples, setFinishedRealExamples] = useState([]);
   const [animationFrame, setAnimationFrame] = useState(1);
   const [attempts, setAttempts] = useState([]);
+  const [attemptsLoaded, setAttemptsLoaded] = useState(false);
 
   useEffect(() => {
     if (!END_PLATE_STATES.includes(plateState))
@@ -63,6 +65,7 @@ function App() {
 
   function loadLatestStateFromWISE(state) {
     setAttempts(state.studentData.attempts);
+    setAttemptsLoaded(true);
     const finishedRealExamples = [];
     for (const attempt of state.studentData.attempts) {
       if (attempt.isCorrect) {
@@ -206,84 +209,137 @@ function App() {
     setInput('');
     setScreenState(SCREEN_STATES.realExampleSelection);
   }
+  function isShowLocationSummaryMode() {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.has('mode') && urlParams.get('mode') === 'showLocationSummary';
+  }
 
-  let startRetryButton = null;
-  if (screenState === SCREEN_STATES.canStart) startRetryButton = Start;
-  else if (screenState === SCREEN_STATES.canRetry) startRetryButton = Retry;
+  function getParam(param) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(param);
+  }
 
-  return (
-    <div className="App">
-      <TopText
-        text={topText}
-        afterInputText={afterInputText}
-        onInputChanged={(event) => setInput(event.target.value)}
-      />
-      <RealExamplePanel
-        hide={screenState !== SCREEN_STATES.realExampleSelection}
-        finishedRealExamples={finishedRealExamples}
-        hoverCoordinates={hoverCoordinates}
-        hoverExample={hoveringOverExample}
-      />
-      <Button
-        hide={screenState === SCREEN_STATES.realExampleSelection}
-        className="SelectedExample"
-        disabled={true}
-        background={examplesForState(selectedExample)}
-      >
-        <p>{REAL_EXAMPLES_TEXT[selectedExample]}</p>
-      </Button>
-      <Button
-        hide={screenState === SCREEN_STATES.realExampleSelection}
-        className="SelectedLocation"
-        disabled={true}
-        background={locationForState(selectedExample)}
-      >
-        <p>Where it is</p>
-      </Button>
-      <ControlPanel
-        hide={
-          screenState !== SCREEN_STATES.plateSelection && screenState !== SCREEN_STATES.canStart
-        }
-        onClick={onControlButtonClicked}
-        plateState={plateState}
-        boundaryState={boundaryState}
-      />
-      <div className="ControlButtons" hidden={screenState === SCREEN_STATES.realExampleSelection}>
-        <img
-          className={screenState === SCREEN_STATES.canRestart ? 'ResizingButtons' : null}
-          src={Home}
-          onClick={onRestartClicked}
+  function showLocationSummary() {
+    if (!attemptsLoaded) {
+      return null;
+    }
+    const location = getParam('location');
+    const attemptsForLocation = getAttemptsForLocation(location);
+    let lastAttempt = null;
+    if (attemptsForLocation.length > 0) {
+      lastAttempt = attemptsForLocation[attemptsForLocation.length - 1];
+    }
+    return showLocationAttempt(lastAttempt, location);
+  }
+
+  function getAttemptsForLocation(location) {
+    let locationAttempts = [];
+    if (attempts) {
+      locationAttempts = attempts.filter((attempt) => {
+        return attempt.selectedExample === location;
+      });
+    }
+    return locationAttempts;
+  }
+
+  function showLocationAttempt(lastAttempt, location) {
+    const showLocationText = getParam('showLocationText') !== 'false';
+    const showBoundarySelection = getParam('showBoundarySelection') !== 'false';
+    const showStudentText = getParam('showStudentText') !== 'false';
+    return (
+      <LocationSummary 
+        attempt={lastAttempt}
+        location={location}
+        showLocationText={showLocationText}
+        showBoundarySelection={showBoundarySelection}
+        showStudentText={showStudentText} />
+    );
+  }
+
+  function showDefaultMode() {
+    let startRetryButton = null;
+    if (screenState === SCREEN_STATES.canStart) startRetryButton = Start;
+    else if (screenState === SCREEN_STATES.canRetry) startRetryButton = Retry;
+    return (
+      <div className="App">
+        <TopText
+          text={topText}
+          afterInputText={afterInputText}
+          onInputChanged={(event) => setInput(event.target.value)}
         />
+        <RealExamplePanel
+          hide={screenState !== SCREEN_STATES.realExampleSelection}
+          finishedRealExamples={finishedRealExamples}
+          hoverCoordinates={hoverCoordinates}
+          hoverExample={hoveringOverExample}
+        />
+        <Button
+          hide={screenState === SCREEN_STATES.realExampleSelection}
+          className="SelectedExample"
+          disabled={true}
+          background={examplesForState(selectedExample)}
+        >
+          <p>{REAL_EXAMPLES_TEXT[selectedExample]}</p>
+        </Button>
+        <Button
+          hide={screenState === SCREEN_STATES.realExampleSelection}
+          className="SelectedLocation"
+          disabled={true}
+          background={locationForState(selectedExample)}
+        >
+          <p>Where it is</p>
+        </Button>
+        <ControlPanel
+          hide={
+            screenState !== SCREEN_STATES.plateSelection && screenState !== SCREEN_STATES.canStart
+          }
+          onClick={onControlButtonClicked}
+          plateState={plateState}
+          boundaryState={boundaryState}
+        />
+        <div className="ControlButtons" hidden={screenState === SCREEN_STATES.realExampleSelection}>
+          <img
+            className={screenState === SCREEN_STATES.canRestart ? 'ResizingButtons' : null}
+            src={Home}
+            onClick={onRestartClicked}
+          />
+          <img
+            className="ResizingButtons"
+            src={startRetryButton}
+            onClick={onStartRetryClicked}
+            hidden={screenState === SCREEN_STATES.canRestart}
+          />
+        </div>
         <img
-          className="ResizingButtons"
-          src={startRetryButton}
-          onClick={onStartRetryClicked}
-          hidden={screenState === SCREEN_STATES.canRestart}
+          className="Check CenteredCheck"
+          src={Check}
+          hidden={screenState !== SCREEN_STATES.canRestart}
+        />
+        <Background
+          hide={screenState === SCREEN_STATES.realExampleSelection}
+          plateState={plateState}
+          boundaryState={boundaryState}
+          frame={animationFrame}
+        />
+        <WorldMap
+          hide={screenState !== SCREEN_STATES.realExampleSelection}
+          onHover={(event, example) => {
+            setHoverExample(example);
+            setHoverCoordinates([event.clientX, event.clientY]);
+          }}
+          endHover={() => setHoverExample('')}
+          finishedRealExamples={finishedRealExamples}
+          onClick={onExampleButtonClicked}
         />
       </div>
-      <img
-        className="Check CenteredCheck"
-        src={Check}
-        hidden={screenState !== SCREEN_STATES.canRestart}
-      />
-      <Background
-        hide={screenState === SCREEN_STATES.realExampleSelection}
-        plateState={plateState}
-        boundaryState={boundaryState}
-        frame={animationFrame}
-      />
-      <WorldMap
-        hide={screenState !== SCREEN_STATES.realExampleSelection}
-        onHover={(event, example) => {
-          setHoverExample(example);
-          setHoverCoordinates([event.clientX, event.clientY]);
-        }}
-        endHover={() => setHoverExample('')}
-        finishedRealExamples={finishedRealExamples}
-        onClick={onExampleButtonClicked}
-      />
-    </div>
-  );
+    );
+  }
+
+  if (isShowLocationSummaryMode()) {
+    return showLocationSummary();
+  } else {
+    return showDefaultMode();
+  }
 }
 
 export default App;
