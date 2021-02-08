@@ -23,9 +23,17 @@
 
 .attempt.no-data {
   font-weight: 500;
-  color: #c62828;
+  color: #C62828;
   text-align: center;
-  border-color: #c62828;
+  border-color: #C62828;
   max-width: 700px;
   margin: 0 auto;
+}
+
+.correct {
+  color: #00C853;
+}
+
+.incorrect {
+  color: #C62828;
 }

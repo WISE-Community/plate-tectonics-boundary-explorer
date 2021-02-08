@@ -29,8 +29,11 @@ function LocationSummary(props) {
 
   function getBoundarySelection() {
     if (props.showBoundarySelection) {
+      const isCorrectHtml = props.attempt.isCorrect ? 
+          <span class="correct">(Correct)</span> :
+          <span class="incorrect">(Incorrect)</span>;
       return (
-        <p><strong>Predicted Boundary Type:</strong> {endStateToText[props.attempt.endState]}</p>
+        <p><strong>Predicted Boundary Type:</strong> {endStateToText[props.attempt.endState]} {isCorrectHtml}</p>
       );
     }
   }
